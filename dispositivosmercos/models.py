@@ -1,6 +1,4 @@
 from django.db import models
-import colaboradoresmercos
-
 
 class Dispositivos(models.Model):
     nome = models.CharField(max_length=30)
@@ -14,7 +12,7 @@ class Dispositivos(models.Model):
 
 class DispositivosColaborador(models.Model):
     dispositivo = models.ForeignKey(Dispositivos, on_delete=models.DO_NOTHING)
-    usuario = models.ForeignKey(colaboradoresmercos.models.Colaborador, on_delete=models.DO_NOTHING)
+    usuario = models.ForeignKey('colaboradoresmercos.models.Colaborador', on_delete=models.DO_NOTHING)
     data_de_emprestimo = models.DateField()
     emprestimo_ativo = models.BooleanField(default=True)
     ultima_alteracao = models.DateTimeField(null=True)
