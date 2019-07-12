@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
+      xmlns="http://www.w3.org/1999/html">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Colaborador</title>
+</head>
+<body bgcolor="#f8f8f8">
+
+<font font-family="Montserrat, Arial, Sans Serif;" size="3">
+
+    <form align="center" method="post" action="{% url 'cadastrar_colaborador' %}">
+    {% csrf_token %}
+
+<hr><h2> CADASTRE-SE </h2></hr>
+
+
+<table align="center" border="1">
+
+    <tr>
+        <td align="left"> Nome:</td><td> {{ form.nome }}</td>
+    </tr>
+    <tr>
+        <td align="left">Email:</td><td> {{ form.email }} </td>
+    </tr>
+    <tr>
+        <td align="left">Area:</td><td> {{ form.area }} </td>
+    </tr>
+
+</table>
+    <input type="submit" value="Enviar"/>
+    </tr>
+
+</form>
+
+</font>
+
+
+
+</body>
+</html>
+
