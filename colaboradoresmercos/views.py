@@ -1,9 +1,7 @@
-from django.http import HttpResponse
 from django.views import View
 from colaboradoresmercos.forms import FormColaborador, FormLogin
-from colaboradoresmercos.models import Colaborador
-from django.shortcuts import render, redirect
-from django.urls import reverse
+from django.contrib.auth.models import User
+from django.shortcuts import render
 
 
 
@@ -13,6 +11,8 @@ class CadastrarColaborador(View):
         return render(request, 'cadastrar_colaborador.html', {'form': form})
 
     def post(self, request):
+        from core import cria_novo_colaborador
+
         form = FormColaborador(request.POST)
 
         if not form.is_valid():
@@ -21,12 +21,13 @@ class CadastrarColaborador(View):
         nome = form.cleaned_data['nome']
         email = form.cleaned_data['email']
         area = form.cleaned_data['area']
+        senha = form.cleaned_data['senha']
 
-        colaborador = Colaborador()
-        colaborador.nome = nome
-        colaborador.email = email
-        colaborador.area = area
-        colaborador.save()
+        user = User.objects.create(username=nome, email=email)
+        user.set_password(senha)
+        user.save()
+
+        cria_novo_colaborador(user, nome, email, area)
 
 
 class Login(View):
@@ -39,3 +40,4 @@ class Login(View):
 
        if not form.is_valid():
             return render(request, 'login.html', {'form': form})
+
