@@ -23,11 +23,11 @@ class CadastrarColaborador(View):
         area = form.cleaned_data['area']
         senha = form.cleaned_data['senha']
 
-        user = User.objects.create(username=nome, email=email)
+        user = User.objects.create(first_name=name, username=email, email=email)
         user.set_password(senha)
         user.save()
 
-        cria_novo_colaborador(user, nome, email, area)
+        cria_novo_colaborador(user.id, nome, email, area)
 
         return redirect(reverse('login'))
 

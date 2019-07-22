@@ -1,5 +1,5 @@
 """
-WSGI config for dispositivos_mercos project.
+WSGI config for projeto_20 project.
 
 It exposes the WSGI callable as a module-level variable named ``application``.
 
@@ -11,6 +11,6 @@ import os
 
 from django.core.wsgi import get_wsgi_application
 
-os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'dispositivos_mercos.settings')
+os.environ.setdefault('DJANGO_SETTINGS_MODULE', 'projeto_20.settings')
 
 application = get_wsgi_application()

@@ -1,9 +1,9 @@
 from colaboradoresmercos.models import Colaborador
 
 
-def cria_novo_colaborador(user, nome, email, area):
+def cria_novo_colaborador(user_id, nome, email, area):
     colaborador = Colaborador()
-    colaborador.user = user
+    colaborador.user_id = user_id
     colaborador.nome = nome
     colaborador.email = email
     colaborador.area = area

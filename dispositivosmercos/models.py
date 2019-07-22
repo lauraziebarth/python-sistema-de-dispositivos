@@ -11,5 +11,11 @@ class Dispositivos(models.Model):
     ultima_alteracao = models.DateTimeField(null=True)
 
 
+class DispositivosColaborador(models.Model):
+    dispositivo = models.ForeignKey(Dispositivos, on_delete=models.DO_NOTHING)
+    usuario = models.ForeignKey('colaboradoresmercos.Colaborador', on_delete=models.DO_NOTHING)
+    data_de_emprestimo = models.DateField()
+    emprestimo_ativo = models.BooleanField(default=True)
+    ultima_alteracao = models.DateTimeField(null=True)
 
 
