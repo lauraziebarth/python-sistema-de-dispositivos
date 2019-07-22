@@ -1,8 +1,8 @@
 from django.views import View
 from colaboradoresmercos.forms import FormColaborador, FormLogin
 from django.contrib.auth.models import User
-from django.shortcuts import render
-
+from django.shortcuts import render, redirect
+from django.urls import reverse
 
 
 class CadastrarColaborador(View):
@@ -11,7 +11,7 @@ class CadastrarColaborador(View):
         return render(request, 'cadastrar_colaborador.html', {'form': form})
 
     def post(self, request):
-        from core import cria_novo_colaborador
+        from core.colaborador import cria_novo_colaborador
 
         form = FormColaborador(request.POST)
 
@@ -29,15 +29,18 @@ class CadastrarColaborador(View):
 
         cria_novo_colaborador(user, nome, email, area)
 
+        return redirect(reverse('login'))
+
 
 class Login(View):
-   def get(self, request):
+    def get(self, request):
         form = FormLogin()
         return render(request, 'login.html', {'form': form})
 
-   def post(self, request):
-       form = FormColaborador(request.POST)
+    def post(self, request):
+        form = FormColaborador(request.POST)
 
-       if not form.is_valid():
+        if not form.is_valid():
             return render(request, 'login.html', {'form': form})
 
+    pass

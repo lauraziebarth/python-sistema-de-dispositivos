@@ -8,6 +8,3 @@ def cria_novo_colaborador(user, nome, email, area):
     colaborador.email = email
     colaborador.area = area
     colaborador.save()
-
-
-

@@ -25,7 +25,7 @@ SECRET_KEY = 'i3lswg)z#xxaidb(n^$nn5x=y-ac2n()gwba_2)nkf5+(4afu@'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
-    'dispositivosmercos',
-    'colaboradoresmercos',
+    'dispositivosmercos.apps.DispositivosmercosConfig',
+    'colaboradoresmercos.apps.ColaboradoresmercosConfig',
 ]
 
 MIDDLEWARE = [
@@ -109,7 +109,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'America/Sao_Paulo'
 
 USE_I18N = True
 

@@ -5,10 +5,10 @@
         <link href=“https://fonts.googleapis.com/css?family=Montserrat” rel=“stylesheet”>
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <style>
-            body{
-                font-family: 'Montserrat', sans-serif;
-            }
+        <style>
+                body{
+                    font-family: 'Montserrat', sans-serif;
+                }
         </style>
 
     </head>
@@ -18,7 +18,7 @@
     <h1 class="text-center" style="margin-top: 50px;"> Acessar o sistema</h1>
 
 
-    <form style="margin-top: 50px; background: azure" method="post" action="{% url 'login' %}">
+    <form style="margin-top: 50px" method="post" action="{% url 'login' %}">
 
         <div class="mx-auto" style="width: 350px;">
 
@@ -38,7 +38,11 @@
                 <label class="form-check-label" for="xx">Lembrar</label>
             </div>
 
-            <button type="submit" class="btn btn-primary">Entrar</button>
+
+            <input class="btn btn-success btn-lg btn-block" type="submit" value="Entrar"/>
+            <div class="my-1">
+                 <a class="btn btn-secondary btn-lg btn-block" href="{% url 'cadastrar_colaborador' %}">Cadastre-se</a>
+            </div>
 
         </div>
     </form>

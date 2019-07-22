@@ -1,42 +1,67 @@
+{% load widget_tweaks %}
+
+
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html" xmlns="http://www.w3.org/1999/html"
       xmlns="http://www.w3.org/1999/html">
-<head>
-    <meta charset="UTF-8">
-    <title>Cadastrar Colaborador</title>
-</head>
-<body bgcolor="#f8f8f8">
-
-<font font-family="Montserrat, Arial, Sans Serif;" size="3">
-
-    <form align="center" method="post" action="{% url 'cadastrar_colaborador' %}">
-    {% csrf_token %}
-
-<hr><h2> CADASTRE-SE </h2></hr>
 
 
-<table align="center" border="1">
+    <head>
+        <meta charset="UTF-8">
+        <title>Cadastro</title>
+        <link href=“https://fonts.googleapis.com/css?family=Montserrat” rel=“stylesheet”>
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
-    <tr>
-        <td align="left"> Nome:</td><td> {{ form.nome }}</td>
-    </tr>
-    <tr>
-        <td align="left">Email:</td><td> {{ form.email }} </td>
-    </tr>
-    <tr>
-        <td align="left">Area:</td><td> {{ form.area }} </td>
-    </tr>
+        <style>
+                body{
+                    font-family: 'Montserrat', sans-serif;
+                }
+        </style>
 
-</table>
-    <input type="submit" value="Enviar"/>
-    </tr>
-
-</form>
-
-</font>
+    </head>
 
 
+    <body>
 
-</body>
-</html>
+        <h1 class="text-center" style="margin-top: 50px;"><b>Cadastre-se</b></h1>
+
+        <form style="margin-top: 50px" method="post" action="{% url 'cadastrar_colaborador' %}">
+            {% csrf_token %}
+
+            <div class="mx-auto" style="width: 350px;">
+
+                <div class="form-group">
+                   <label for="id1">Nome</label>
+                    {% render_field form.nome class="form-control" %}
+                </div>
+
+                <div class="form-group">
+                    <label for="id2">E-mail</label>
+                    {% render_field form.email class="form-control" %}
+                </div>
+
+                <div class="form-group">
+                    <label for="id3">Área</label>
+                    {% render_field form.area class="form-control" %}
+                </div>
+
+
+                <div class="form-group">
+                    <label for="id4">Senha</label>
+                    {% render_field form.senha class="form-control" %}
+                </div>
+
+                <input class="btn btn-success btn-lg btn-block" type="submit" value="Salvar"/>
+
+            </div>
+
+        </form>
+
+        <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+
+    </body>
+
+    </html>
 
