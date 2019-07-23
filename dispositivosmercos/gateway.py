@@ -29,3 +29,13 @@ def excluir_dispositivo(dispositivo_id):
     dispositivo.excluido = True
     dispositivo.ultima_alteracao = datetime.now()
     dispositivo.save()
+
+
+def cria_novo_dispositivo(sistema_operacional, nome, descricao, numeromodelo, versao):
+    dispositivo = Dispositivos()
+    dispositivo.os = sistema_operacional
+    dispositivo.nome = nome
+    dispositivo.descricao = descricao
+    dispositivo.numeromodelo = numeromodelo
+    dispositivo.versao = versao
+    dispositivo.save()

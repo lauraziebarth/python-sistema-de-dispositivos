@@ -4,8 +4,7 @@ from dispositivosmercos.forms import FormDispositivo
 from dispositivosmercos.models import Dispositivos
 from django.shortcuts import render, redirect
 from django.urls import reverse
-from dispositivosmercos.gateway import busca_dispositivos_nao_excluidos, busca_um_dispositivo, alterar_dispositivo, excluir_dispositivo
-
+from dispositivosmercos.gateway import busca_dispositivos_nao_excluidos, busca_um_dispositivo, alterar_dispositivo, excluir_dispositivo, cria_novo_dispositivo
 
 class ListarDispositivos(View):
     def get(self, request):
@@ -24,17 +23,13 @@ class CadastrarDispositivo(View):
         if not form.is_valid():
             return render(request, 'cadastrar_dispositivo.html', {'form': form})
 
+        sistema_operacional = form.cleaned_data['sistema_operacional']
         nome = form.cleaned_data['nome']
         descricao = form.cleaned_data['descricao']
         numeromodelo = form.cleaned_data['numeromodelo']
         versao = form.cleaned_data['versao']
 
-        dispositivo = Dispositivos()
-        dispositivo.nome = nome
-        dispositivo.descricao = descricao
-        dispositivo.numeromodelo = numeromodelo
-        dispositivo.versao = versao
-        dispositivo.save()
+        cria_novo_dispositivo(sistema_operacional, nome, descricao, numeromodelo, versao)
 
         return redirect(reverse('listar_dispositivos'))
 
