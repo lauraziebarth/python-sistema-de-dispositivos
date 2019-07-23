@@ -2,6 +2,7 @@ from django.db import models
 
 
 class Dispositivos(models.Model):
+    os = models.IntegerField(default=False, null=False)
     nome = models.CharField(max_length=30)
     descricao = models.CharField(max_length=30)
     numeromodelo = models.CharField(max_length=30, default='NULL')
