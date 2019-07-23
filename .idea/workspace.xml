@@ -2,24 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f74fcb45-3d65-4f23-b146-4ef29382d3d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/../projeto_20/colaboradoresmercos/enums.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../projeto_20/core/dispositivo/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../projeto_20/core/dispositivo/tests/__init__.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../projeto_20/dispositivosmercos/enums.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projeto_20/.idea/dataSources/2d1fa906-a14b-4c5e-8ca8-fef5b2b07cdd.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projeto_20/.idea/dispositivos_mercos.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/.idea/projeto_20.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projeto_20/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projeto_20/.idea/runConfigurations/dispositivos_mercos.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/.idea/runConfigurations/projeto_20.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto_20/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto_20/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto_20/.idea/projeto_20.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/.idea/projeto_20.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto_20/.idea/runConfigurations/projeto_20.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/.idea/runConfigurations/projeto_20.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../projeto_20/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto_20/colaboradoresmercos/enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/colaboradoresmercos/enums.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../projeto_20/colaboradoresmercos/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/colaboradoresmercos/forms.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projeto_20/colaboradoresmercos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/colaboradoresmercos/views.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../projeto_20/core/colaborador/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/core/colaborador/__init__.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projeto_20/dispositivos_mercos/__init__.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projeto_20/dispositivos_mercos/settings.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projeto_20/dispositivos_mercos/urls.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projeto_20/dispositivos_mercos/wsgi.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto_20/dispositivosmercos/enums.py" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/dispositivosmercos/enums.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto_20/dispositivosmercos/forms.py" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/dispositivosmercos/forms.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto_20/dispositivosmercos/gateway.py" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/dispositivosmercos/gateway.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto_20/dispositivosmercos/migrations/0001_initial.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/../projeto_20/dispositivosmercos/models.py" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/dispositivosmercos/models.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../projeto_20/manage.py" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/manage.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto_20/dispositivosmercos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/dispositivosmercos/views.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto_20/templates/cadastrar_colaborador.html" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/templates/cadastrar_colaborador.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto_20/templates/cadastrar_dispositivo.html" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/templates/cadastrar_dispositivo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../projeto_20/templates/listar_dispositivos.html" beforeDir="false" afterPath="$PROJECT_DIR$/../projeto_20/templates/listar_dispositivos.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -41,32 +40,18 @@
     <expand>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="dispositivosdb" type="feb32156:DbDataSourceImpl" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="dispositivosdb" type="feb32156:DbDataSourceImpl" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
       </path>
       <path>
         <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="dispositivosdb" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="dispositivosdb" type="feb32156:DbDataSourceImpl" />
+        <item name="db" type="feb32156:DbDataSourceImpl" />
         <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
         <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="auth_user: table" type="3d80ac25:SqliteImplModel$Table" />
-      </path>
-      <path>
-        <item name="Database" type="3277223f:DatabaseStructure$DbRootGroup" />
-        <item name="dispositivosdb" type="feb32156:DbDataSourceImpl" />
-        <item name="schemas" type="d4e8921:DatabaseStructure$FamilyGroup" />
-        <item name="main: schema" type="981a47c2:SqliteImplModel$Schema" />
-        <item name="colaboradoresmercos_colaborador: table" type="3d80ac25:SqliteImplModel$Table" />
       </path>
     </expand>
     <select />
@@ -76,11 +61,11 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="180">
+              <caret line="12" column="70" lean-forward="true" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="70" />
               <folding>
                 <element signature="e#16#54#0" expanded="true" />
               </folding>
@@ -89,77 +74,79 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../projeto_20/projeto_20/wsgi.py">
+        <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/forms.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="135">
-              <caret line="9" selection-start-line="9" selection-end-line="9" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../projeto_20/projeto_20/urls.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="300">
-              <caret line="23" column="48" lean-forward="true" selection-start-line="23" selection-start-column="48" selection-end-line="23" selection-end-column="48" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/views.py">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="489">
-              <caret line="37" column="60" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
+            <state relative-caret-position="210">
+              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
               <folding>
-                <element signature="e#0#29#0" expanded="true" />
+                <element signature="e#16#54#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/models.py">
+        <entry file="file://$PROJECT_DIR$/../projeto_20/templates/cadastrar_dispositivo.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="30">
-              <caret line="2" selection-start-line="2" selection-end-line="2" />
+            <state relative-caret-position="309">
+              <caret line="32" column="35" lean-forward="true" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/tests.py">
+        <entry file="file://$PROJECT_DIR$/../projeto_20/templates/listar_dispositivos.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="18" column="57" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/../projeto_20/templates/confirma_excluir_dispositivo.html">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/models.py">
+        <entry file="file://$PROJECT_DIR$/../projeto_20/.gitattributes">
+          <provider selected="true" editor-type-id="text-editor" />
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/../projeto_20/templates/login.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="285">
-              <caret line="19" selection-start-line="19" selection-end-line="19" />
+            <state relative-caret-position="310">
+              <caret line="41" column="90" selection-start-line="41" selection-start-column="90" selection-end-line="41" selection-end-column="90" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../projeto_20/projeto_20/settings.py">
+        <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="106">
-              <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+            <state relative-caret-position="-19">
+              <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+              <folding>
+                <element signature="e#0#36#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/enums.py">
+        <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/gateway.py">
           <provider selected="true" editor-type-id="text-editor" />
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/enums.py">
+        <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/gateway.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="45">
-              <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+            <state relative-caret-position="580">
+              <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+              <folding>
+                <element signature="e#0#38#0" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -210,9 +197,19 @@
         <option value="$PROJECT_DIR$/core/colaborador/__init__.py" />
         <option value="$PROJECT_DIR$/colaboradoresmercos/views.py" />
         <option value="$PROJECT_DIR$/dispositivosmercos/models.py" />
-        <option value="$PROJECT_DIR$/../projeto_20/dispositivosmercos/enums.py" />
-        <option value="$PROJECT_DIR$/../projeto_20/colaboradoresmercos/enums.py" />
         <option value="$PROJECT_DIR$/../projeto_20/colaboradoresmercos/forms.py" />
+        <option value="$PROJECT_DIR$/../projeto_20/templates/cadastrar_colaborador.html" />
+        <option value="$PROJECT_DIR$/../projeto_20/templates/login.html" />
+        <option value="$PROJECT_DIR$/../projeto_20/colaboradoresmercos/enums.py" />
+        <option value="$PROJECT_DIR$/../projeto_20/dispositivosmercos/enums.py" />
+        <option value="$PROJECT_DIR$/../projeto_20/dispositivosmercos/forms.py" />
+        <option value="$PROJECT_DIR$/../projeto_20/dispositivosmercos/models.py" />
+        <option value="$PROJECT_DIR$/../projeto_20/colaboradoresmercos/gateway.py" />
+        <option value="$PROJECT_DIR$/../projeto_20/core/colaborador/__init__.py" />
+        <option value="$PROJECT_DIR$/../projeto_20/dispositivosmercos/gateway.py" />
+        <option value="$PROJECT_DIR$/../projeto_20/dispositivosmercos/views.py" />
+        <option value="$PROJECT_DIR$/../projeto_20/templates/cadastrar_dispositivo.html" />
+        <option value="$PROJECT_DIR$/../projeto_20/templates/listar_dispositivos.html" />
       </list>
     </option>
   </component>
@@ -242,6 +239,12 @@
             <path>
               <item name="projeto_20" type="b2602c69:ProjectViewProjectNode" />
               <item name="projeto_20" type="462c0819:PsiDirectoryNode" />
+              <item name="colaboradoresmercos" type="462c0819:PsiDirectoryNode" />
+              <item name="migrations" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projeto_20" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projeto_20" type="462c0819:PsiDirectoryNode" />
               <item name="core" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
@@ -260,6 +263,11 @@
               <item name="projeto_20" type="462c0819:PsiDirectoryNode" />
               <item name="projeto_20" type="462c0819:PsiDirectoryNode" />
             </path>
+            <path>
+              <item name="projeto_20" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projeto_20" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
+            </path>
           </expand>
           <select />
         </subPane>
@@ -275,7 +283,7 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
-    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.django.DjangoModulesConfigurable" />
   </component>
   <component name="RunDashboard">
     <option name="ruleStates">
@@ -436,13 +444,13 @@
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="24128000" />
+    <option name="totallyTimeSpent" value="28450000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="22" width="1440" height="794" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.14592275" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.14592275" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -456,14 +464,14 @@
       <window_info anchor="bottom" id="Docker" order="8" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="9" />
       <window_info anchor="bottom" id="Database Changes" order="10" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="11" sideWeight="0.49928468" visible="true" weight="0.042735044" />
+      <window_info anchor="bottom" id="Terminal" order="11" sideWeight="0.49928468" visible="true" weight="0.05698006" />
       <window_info anchor="bottom" id="Event Log" order="12" sideWeight="0.5007153" side_tool="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.32911393" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
       <window_info anchor="right" id="SciView" order="3" weight="0.3297568" />
-      <window_info anchor="right" id="Database" order="4" weight="0.20958512" />
+      <window_info anchor="right" id="Database" order="4" weight="0.40844062" />
     </layout>
     <layout-to-restore>
       <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16165951" />
@@ -499,56 +507,6 @@
     </ignored-roots>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/../projeto_20/manage.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-          <folding>
-            <element signature="e#84#93#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/projeto_20/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/requirements.txt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" column="8" selection-start-line="2" selection-start-column="8" selection-end-line="2" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/dispositivos_mercos/lib/python3.7/site-packages/django/db/backends/mysql/base.py" />
-    <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/2d1fa906-a14b-4c5e-8ca8-fef5b2b07cdd/console.sql" />
-    <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/migrations/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/README.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="715">
-            <caret line="53" column="1" selection-start-line="53" selection-start-column="1" selection-end-line="53" selection-end-column="1" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$USER_HOME$/dispositivos_mercos/lib/python3.7/site-packages/django/db/models/__init__.py" />
-    <entry file="file://$USER_HOME$/dispositivos_mercos/lib/python3.7/site-packages/django/conf/__init__.py" />
-    <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/migrations/0001_initial.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="390">
-          <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
-          <folding>
-            <element signature="e#47#79#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/dispositivos_mercos/lib/python3.7/site-packages/django/contrib/auth/models.py" />
     <entry file="file://$USER_HOME$/dispositivos_mercos/lib/python3.7/site-packages/django/forms/__init__.py" />
     <entry file="file://$USER_HOME$/dispositivos_mercos/lib/python3.7/site-packages/django/contrib/auth/base_user.py" />
@@ -560,44 +518,10 @@
     <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/admin.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="45">
           <caret line="3" column="31" lean-forward="true" selection-start-line="3" selection-start-column="6" selection-end-line="3" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/templates/login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="211">
-          <caret line="28" column="18" lean-forward="true" selection-start-line="28" selection-start-column="18" selection-end-line="28" selection-end-column="18" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/templates/cadastrar_dispositivo.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="481">
-          <caret line="39" selection-start-line="39" selection-end-line="39" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/templates/cadastrar_colaborador.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="324">
-          <caret line="27" column="95" selection-start-line="27" selection-start-column="95" selection-end-line="27" selection-end-column="95" />
-          <folding>
-            <element signature="n#style#0;n#h1#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -610,34 +534,8 @@
     <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/admin.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
     <entry file="file://$PROJECT_DIR$/core/dispositivo/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-72">
-          <caret line="7" selection-start-line="7" selection-end-line="7" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/core/dispositivo/__init__.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/gateway.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/core/colaborador/__init__.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="15">
-          <caret line="1" selection-start-line="1" selection-end-line="2" />
-        </state>
-      </provider>
     </entry>
     <entry file="das://8511a548-9f59-4648-b5e1-d54d34a68238/schema/main/table/auth_user">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
@@ -657,60 +555,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/gateway.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="23" column="14" selection-start-line="23" selection-end-line="24" />
-          <folding>
-            <element signature="e#0#38#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/forms.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="165">
-          <caret line="11" column="43" selection-start-line="11" selection-start-column="43" selection-end-line="11" selection-end-column="43" />
-          <folding>
-            <element signature="e#16#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/apps.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="75">
           <caret line="5" column="9" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="9" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="30">
-          <caret line="2" selection-start-line="2" selection-end-line="2" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/tests.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/models.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" selection-start-line="19" selection-end-line="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/enums.py">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/views.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="489">
-          <caret line="37" column="60" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
-          <folding>
-            <element signature="e#0#29#0" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -721,6 +569,26 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/templates/cadastrar_colaborador.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="342">
+          <caret line="55" column="34" selection-start-line="55" selection-start-column="34" selection-end-line="55" selection-end-column="34" />
+          <folding>
+            <element signature="n#style#0;n#form#0;n#body#0;n#html#0;n#!!top" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/projeto_20/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-161">
+          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/../projeto_20/projeto_20/urls.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="300">
@@ -728,27 +596,180 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/projeto_20/settings.py">
+    <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/enums.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="106">
-          <caret line="42" column="1" selection-start-line="42" selection-start-column="1" selection-end-line="42" selection-end-column="1" />
+        <state relative-caret-position="120">
+          <caret line="8" column="1" lean-forward="true" selection-start-line="8" selection-start-column="1" selection-end-line="8" selection-end-column="1" />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/enums.py">
+    <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/enums.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="45">
-          <caret line="3" column="13" lean-forward="true" selection-start-line="3" selection-start-column="13" selection-end-line="3" selection-end-column="13" />
+        <state relative-caret-position="30">
+          <caret line="2" column="15" selection-start-line="2" selection-end-line="2" selection-end-column="15" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="145">
+          <caret line="26" column="14" lean-forward="true" selection-start-line="26" selection-start-column="14" selection-end-line="26" selection-end-column="14" />
+          <folding>
+            <element signature="e#47#79#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/migrations/0002_auto_20190722_2149.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-190" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://583a43ed-23b9-4a00-bc86-8d11aa0fa66c/schema/main/table/colaboradoresmercos_colaborador">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="8ec3910c-2747-4d32-b05c-21b6b4839a06">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://583a43ed-23b9-4a00-bc86-8d11aa0fa66c/schema/main/table/dispositivosmercos_dispositivoscolaborador">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="8ec3910c-2747-4d32-b05c-21b6b4839a06">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/tests.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/migrations/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/projeto_20/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="das://583a43ed-23b9-4a00-bc86-8d11aa0fa66c/schema/main/table/dispositivosmercos_dispositivos">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state projectRestartId="8ec3910c-2747-4d32-b05c-21b6b4839a06">
+          <filtering>
+            <filter text="" />
+          </filtering>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/migrations/0001_initial.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-35" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/core/dispositivo/__init__.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="22" lean-forward="true" selection-start-line="22" selection-end-line="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/models.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="135">
+          <caret line="9" column="54" lean-forward="true" selection-start-line="9" selection-start-column="54" selection-end-line="9" selection-end-column="54" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/core/colaborador/__init__.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="452">
+          <caret line="37" column="60" selection-start-line="37" selection-start-column="60" selection-end-line="37" selection-end-column="60" />
+          <folding>
+            <element signature="e#0#29#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/gateway.py">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/gateway.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="580">
+          <caret line="41" lean-forward="true" selection-start-line="41" selection-end-line="41" />
+          <folding>
+            <element signature="e#0#38#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/views.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-19">
+          <caret line="15" column="9" selection-start-line="15" selection-start-column="9" selection-end-line="15" selection-end-column="9" />
+          <folding>
+            <element signature="e#0#36#0" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/../projeto_20/colaboradoresmercos/forms.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="19" lean-forward="true" selection-start-line="19" selection-end-line="19" />
+        <state relative-caret-position="180">
+          <caret line="12" column="70" lean-forward="true" selection-start-line="12" selection-start-column="70" selection-end-line="12" selection-end-column="70" />
           <folding>
             <element signature="e#16#54#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/dispositivosmercos/forms.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="210">
+          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+          <folding>
+            <element signature="e#16#54#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/templates/cadastrar_dispositivo.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="309">
+          <caret line="32" column="35" lean-forward="true" selection-start-line="32" selection-start-column="35" selection-end-line="32" selection-end-column="35" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/templates/listar_dispositivos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="270">
+          <caret line="18" column="57" selection-start-line="18" selection-start-column="57" selection-end-line="18" selection-end-column="57" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/templates/confirma_excluir_dispositivo.html">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/.gitattributes">
+      <provider selected="true" editor-type-id="text-editor" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/../projeto_20/templates/login.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="310">
+          <caret line="41" column="90" selection-start-line="41" selection-start-column="90" selection-end-line="41" selection-end-column="90" />
         </state>
       </provider>
     </entry>
