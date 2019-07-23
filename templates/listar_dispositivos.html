@@ -16,7 +16,7 @@
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
-          <th width="10%" scope="col">ID</th>
+          <th width="10%" scope="col">Sistema Operacional</th>
           <th width="20%" scope="col">Nome</th>
           <th width="30%" scope="col">Descrição</th>
           <th width="15%" scope="col">Numero do Modelo</th>
@@ -28,7 +28,7 @@
       <tbody>
         {% for dispositivo in dispositivos %}
             <tr>
-              <th scope="row"  class="align-middle" >{{ dispositivo.id }}</th>
+              <th scope="row"  class="align-middle" >{{ dispositivo.os }}</th>
               <td  class="align-middle">{{ dispositivo.nome }}</td>
               <td  class="align-middle">{{ dispositivo.descricao }}</td>
               <td  class="align-middle">{{ dispositivo.numeromodelo }}</td>
