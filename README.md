@@ -2,7 +2,7 @@
 
 Na empresa que eu trabalho, Mercos, na área de desenvolvimento temos um projeto chamado <b>20%</b>.
 
-#####Mas o que isso significa? 
+#### Mas o que isso significa? 
 
 Que 20% do nosso tempo na semana é dedicado para novos aprendizados. 
 Então, toda sexta-feira paramos para focar em projetos particulares, que de certa forma podem trazer algum retorno para a empresa, como:
@@ -12,7 +12,7 @@ Então, toda sexta-feira paramos para focar em projetos particulares, que de cer
  
 Ou seja, decidimos o que gostaríamos de estudar e implementamos algo prático com o aprendizado que tivemos.
 
-###Meu Projeto 
+### Meu Projeto 
 
 Comecei meus 20% com a idéia de estudar sobre AWS, algo que não entendo praticamente nada, com um pequeno escopo de projeto:
 
@@ -36,16 +36,16 @@ Então assim começou a minha saga para aprender o que era "programar".
 
 
 
-###Planejamento
+### Planejamento
 
-####Motivos para desenvolver a aplicação 
+#### Motivos para desenvolver a aplicação 
 
 Em nossa área temos diversos dispositivos, tablets e celulares, que utilizamos para testar o produto e fazer demonstrações para os clientes. <br>
 Como esses dispositivos são utilizados por todos os colaboradores, com o crescimento da empresa, chegou o momento que precisávamos organizar esses dispositivos de uma forma fácil de encontrar com quem estava quando necessário. <br>
 A primeira idéia, para suprir a necessidade emergencial, foi colocar no papel: nome, área e o nome do dispositivo emprestado. Assim, quem precisasse de um aparelho, preenchia as informações.<br>
 Mas claro, algo feito no papel e fácilmente manipulavél seria algo que não funcionaria por muito tempo.
 
-####Barreiras
+#### Barreiras
 
 ... in progress ...
 
