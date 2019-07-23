@@ -7,10 +7,10 @@ from colaboradoresmercos.enums import AREAS
 
 
 class FormColaborador(forms.Form):
-    nome = forms.CharField(max_length=100)
-    email = forms.CharField(max_length=100)
-    area = forms.ChoiceField(choices=AREAS)
-    senha = forms.CharField(widget=forms.PasswordInput)
+    nome = forms.CharField(max_length=100, required=True)
+    email = forms.CharField(max_length=100, required=True)
+    area = forms.ChoiceField(choices=AREAS, required=True)
+    senha = forms.CharField(widget=forms.PasswordInput, required=True)
 
 
 class FormLogin(forms.Form):
