@@ -38,7 +38,7 @@ Então assim começou a minha saga para aprender o que era programar um sistema 
 
 ### Planejamento
 
-#### Motivos para desenvolver a aplicação que eu queria
+### Motivos para desenvolver a aplicação que eu queria
 
 No começo a ideia era só desenvolver um programa que executasse em tela `Hello World`, só para "pular" a programação e ir direto aprender a lidar com AWS.
 
@@ -47,7 +47,7 @@ Como esses dispositivos são utilizados por todos os colaboradores, com o cresci
 A primeira idéia, para suprir a necessidade emergencial, foi colocar no papel: nome, área e o nome do dispositivo emprestado. Assim, quem precisasse de um aparelho, preenchia por escrito as informações.<br>
 Mas claro, algo feito no papel, e fácilmente manipulavél já sabiamos que seria algo que não funcionaria por muito tempo.
 
-#### Aprendendo com os erros
+### Aprendendo com os erros
 
 Eu precisava entender como eu queria que meu sistema funcionasse, por isso, comecei a desenhar como eu esperava que ele fosse e quais as funções que eu queria que ele tivesse.
 
@@ -73,7 +73,7 @@ Isso foi tudo o que eu precisava para sair do nível de total desespero, para al
 Assim, começou a sair o verdadeiro projeto.
 
 
-#### Trabalhando com o Django
+### Trabalhando com o Django
 
 `... in progress...`
 
