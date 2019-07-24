@@ -18,7 +18,12 @@
     <form method="post" action="{% url 'alterar_dispositivo' dispositivo_id %}">
         {% csrf_token %}
 
-      <div class="form-group">
+        <div class="form-group">
+            <label for="id0">Sistema Operacional:</label>
+            {% render_field form.sistema_operacional class="form-control" %}
+        </div>
+
+        <div class="form-group">
             <label for="id1">Nome:</label>
             {% render_field form.nome class="form-control" %}
         </div>
