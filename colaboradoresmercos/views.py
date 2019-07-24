@@ -3,6 +3,8 @@ from colaboradoresmercos.forms import FormColaborador, FormLogin
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from django.contrib.auth import authenticate, login
+
 
 
 class CadastrarColaborador(View):
@@ -38,9 +40,23 @@ class Login(View):
         return render(request, 'login.html', {'form': form})
 
     def post(self, request):
-        form = FormColaborador(request.POST)
+        username = request.POST['username']
+        password = request.POST['password']
+        user = authenticate(request, username=username, password=password)
 
-        if not form.is_valid():
-            return render(request, 'login.html', {'form': form})
+        if user is not None:
+            login(request, user)
+            # Redirect to a success page.
+        else:
+            pass
 
-    pass
+
+class PerfilColaborador(View):
+    def get(self, request):
+        return render(request, 'perfil_colaborador.html')
+
+
+class ImagemColaborador(View):
+    def get(self, request):
+        salva_imagem_colaborador()
+        return render(request, 'cadastrar_colaborador.html', {'form': form})
