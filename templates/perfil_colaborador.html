@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Perfil</title>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+
+       <div class="collapse navbar-collapse" id="menu_topo">
+
+        <ul class="navbar-nav mr-auto mt-2 mt-lg-0">
+            <a class="navbar-brand" href="#">
+                <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" alt="">
+            </a>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{% url 'perfil' %}"> Perfil <span class="sr-only">(Página atual)</span></a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="{%  url 'listar_dispositivos' %}"> Dispositivos </a>
+            </li>
+
+            <li class="nav-item">
+                <a class="nav-link" href="#"> nada </a>
+            </li>
+
+        </ul>
+
+        <form class="form-inline my-2 my-lg-0">
+          <input class="form-control mr-sm-2" type="search" placeholder="Pesquisar" aria-label="Pesquisar">
+          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Pesquisar</button>
+        </form>
+
+      </div>
+
+    </nav>
+
+
+    <div class="card bg-light" style="width: 18rem;">
+      <img class="card-img-top img-thumbnail" src="https://sayingimages.com/wp-content/uploads/but-firpht-let-me-take-a-phelfie-dog-meme.jpg/" height="200" width="200" alt="Imagem de capa do card">
+      <div class="card-body">
+
+      <h5 class="card-title">Título do card</h5>
+          <p class="card-text">Um exemplo de texto rápido para construir o título do card e fazer preencher o conteúdo do card.</p>
+      </div>
+
+      <div class="card-body" align="center">
+          <div class="btn-group-vertical">
+          <a class="btn-lg btn-block btn-success" href="{% url 'listar_dispositivos' %}">Emprestar Dispositivo</a>
+
+          </div>
+      </div>
+
+    </div>
+
+
+
+
+
+</body>
