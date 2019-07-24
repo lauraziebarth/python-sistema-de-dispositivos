@@ -7,8 +7,6 @@ DISPOSITIVOS_OS = (
 
 # dispositivos disponiveis para emprestino ios
 
-DISPOSITIVOS_IOS = ()
 
 # dispositivos disponiveis para emprestino android
 
-DISPOSITIVOS_AND = ()
