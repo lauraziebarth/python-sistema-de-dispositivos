@@ -14,8 +14,9 @@ def busca_um_dispositivo(dispositivo_id):
     return Dispositivos.objects.get(id=dispositivo_id)
 
 
-def alterar_dispositivo(dispositivo_id, nome, descricao, numeromodelo, versao):
+def alterar_dispositivo(dispositivo_id, sistema_operacional, nome, descricao, numeromodelo, versao):
     dispositivo = busca_um_dispositivo(dispositivo_id)
+    dispositivo.os = sistema_operacional
     dispositivo.nome = nome
     dispositivo.descricao = descricao
     dispositivo.numeromodelo = numeromodelo
