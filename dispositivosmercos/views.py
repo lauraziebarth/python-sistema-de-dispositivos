@@ -4,6 +4,7 @@ from dispositivosmercos.forms import FormDispositivo
 from dispositivosmercos.models import Dispositivos
 from django.shortcuts import render, redirect
 from django.urls import reverse
+from django.contrib.auth import authenticate
 from dispositivosmercos.gateway import busca_dispositivos_nao_excluidos, busca_um_dispositivo, alterar_dispositivo, excluir_dispositivo, cria_novo_dispositivo
 
 class ListarDispositivos(View):
@@ -46,22 +47,19 @@ class AlterarDispositivo(View):
         if not form.is_valid():
             return render(request, 'alterar_dispositivo.html', {'form': form, 'dispositivo_id': dispositivo_id})
 
+        sistema_operacional = form.cleaned_data['sistema_operacional']
         nome = form.cleaned_data['nome']
         descricao = form.cleaned_data['descricao']
         numeromodelo = form.cleaned_data['numeromodelo']
         versao = form.cleaned_data['versao']
 
-        alterar_dispositivo(dispositivo_id, nome, descricao, numeromodelo, versao)
+        alterar_dispositivo(dispositivo_id, sistema_operacional, nome, descricao, numeromodelo, versao)
 
         return redirect(reverse('listar_dispositivos'))
 
 
 class ExcluirDispositivo(View):
     def get(self, request, dispositivo_id=None):
-        dispositivo = busca_um_dispositivo(dispositivo_id)
-        return render(request, 'confirma_excluir_dispositivo.html', {'dispositivo_id': dispositivo_id, 'nome': dispositivo.nome})
-
-    def post(self, request, dispositivo_id=None):
         excluir_dispositivo(dispositivo_id)
-
         return redirect(reverse('listar_dispositivos'))
+
