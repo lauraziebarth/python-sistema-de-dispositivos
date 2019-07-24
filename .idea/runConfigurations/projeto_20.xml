@@ -5,10 +5,11 @@
     <option name="PARENT_ENVS" value="true" />
     <envs>
       <env name="PYTHONUNBUFFERED" value="1" />
+      <env name="DJANGO_SETTINGS_MODULE" value="projeto_20.settings" />
     </envs>
-    <option name="SDK_HOME" value="" />
-    <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/../projeto_20" />
-    <option name="IS_MODULE_SDK" value="true" />
+    <option name="SDK_HOME" value="$USER_HOME$/projeto_20/bin/python" />
+    <option name="WORKING_DIRECTORY" value="$USER_HOME$/projeto_20" />
+    <option name="IS_MODULE_SDK" value="false" />
     <option name="ADD_CONTENT_ROOTS" value="true" />
     <option name="ADD_SOURCE_ROOTS" value="true" />
     <option name="launchJavascriptDebuger" value="false" />
