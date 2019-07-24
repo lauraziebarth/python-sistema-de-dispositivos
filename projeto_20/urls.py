@@ -16,14 +16,15 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from dispositivosmercos.views import ListarDispositivos, CadastrarDispositivo, ExcluirDispositivo, AlterarDispositivo
-from colaboradoresmercos.views import CadastrarColaborador, Login
+from colaboradoresmercos.views import CadastrarColaborador, Login, PerfilColaborador
 
 urlpatterns = [
     path('', Login.as_view(), name='login'),
     path('admin/', admin.site.urls),
     path('cadastrar_colaborador/', CadastrarColaborador.as_view(), name='cadastrar_colaborador'),
+    path('perfil/', PerfilColaborador.as_view(), name='perfil'),
 
-    path('listar_dispositivos/', ListarDispositivos.as_view(), name='listar_dispositivos'),
+    path('dispositivos/', ListarDispositivos.as_view(), name='listar_dispositivos'),
     path('cadastrar_dispositivo/', CadastrarDispositivo.as_view(), name='cadastrar_dispositivo'),
     path('alterar_dispositivo/<int:dispositivo_id>/', AlterarDispositivo.as_view(), name='alterar_dispositivo'),
     path('excluir_dispositivo/<int:dispositivo_id>/', ExcluirDispositivo.as_view(), name='excluir_dispositivo'),
