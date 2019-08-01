@@ -16,12 +16,12 @@
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
-          <th width="10%" scope="col">ID</th>
-          <th width="20%" scope="col">Nome</th>
-          <th width="30%" scope="col">Descrição</th>
-          <th width="15%" scope="col">Numero do Modelo</th>
-          <th width="10%" scope="col">Versão</th>
-          <th width="15%" scope="col">Ações</th>
+          <th width="10%" scope="col" class="align-middle">ID</th>
+          <th width="15%" scope="col" class="align-middle">Nome</th>
+          <th width="20%" scope="col" class="align-middle">Descrição</th>
+          <th width="15%" scope="col" class="align-middle">Numero do Modelo</th>
+          <th width="10%" scope="col" class="align-middle">Versão</th>
+          <th width="30%" scope="col" class="align-middle">Ações</th>
 
         </tr>
       </thead>
@@ -37,10 +37,16 @@
 
             <td  class="align-middle">
                 <a class="btn btn-sm btn-warning" href="{% url 'alterar_dispositivo' dispositivo.id %}">alterar</a>
-                <!-- Button trigger modal -->
+                <!-- Button trigger modal EXCLUIR -->
                 <a class="btn btn-sm btn-danger text-light" data-toggle="modal" data-target="#excluir"> excluir </a>
 
-                <!-- Modal -->
+                 <!-- Button trigger modal EMPRESTAR -->
+                <a class="btn btn-sm btn-primary text-light" data-toggle="modal" data-target="#emprestar"> emprestar </a>
+
+                 <!-- Button trigger modal DEVOLVER -->
+                <a class="btn btn-sm btn-success text-light" data-toggle="modal" data-target="#devolver"> devolver </a>
+
+                <!-- Modal EXCLUIR -->
                 <div class="modal fade" id="excluir" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
@@ -60,6 +66,57 @@
                         </div>
                       </div>
                 </div>
+
+
+                <!-- Modal EMPRESTAR -->
+                <div class="modal fade" id="emprestar" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="confirmasequeremprestar">Deseja emprestar esse dispositivo?</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                            Esse dispositivo ficará em seu nome até que você clique em Devolver. <br>
+                          </div>
+                          <div class="modal-footer">
+                              <a class="btn btn-sm btn-secondary text-light" data-dismiss="modal">Fechar</a>
+                              <a class="btn btn-sm btn-primary text-light" href="{% url 'emprestar_dispositivo' dispositivo.id %}">Emprestar</a>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+
+
+                <!-- Modal DEVOLVER -->
+                <div class="modal fade" id="devolver" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="confirmasequerdevolver">Deseja realmente devolver esse dispositivo?</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                              <b>Antes de devolver lembre-se:</b> <br>
+                              - Sair da sua conta no app Mercos.<br>
+                              - Tirar o app do modo Sandbox.<br>
+                              - Coloque o dispositivo para carregar.<br>
+                          </div>
+                          <div class="modal-footer">
+                              <a class="btn btn-sm btn-secondary text-light" data-dismiss="modal">Fechar</a>
+                              <a class="btn btn-sm btn-success text-light" href="{% url 'devolver_dispositivo' dispositivo.id %}">Devolver</a>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+
+
+
+
             </td>
 
             </tr>
