@@ -6,7 +6,6 @@ from django.urls import reverse
 from django.contrib.auth import authenticate, login
 
 
-
 class CadastrarColaborador(View):
     def get(self, request):
         form = FormColaborador()
@@ -60,3 +59,5 @@ class ImagemColaborador(View):
     def get(self, request):
         salva_imagem_colaborador()
         return render(request, 'cadastrar_colaborador.html', {'form': form})
+
+
