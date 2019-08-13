@@ -1,3 +1,4 @@
+from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.views import View
 from dispositivosmercos.forms import FormDispositivo
@@ -6,18 +7,25 @@ from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth import authenticate
 from dispositivosmercos.gateway import busca_dispositivos_nao_excluidos, busca_um_dispositivo, alterar_dispositivo, excluir_dispositivo, cria_novo_dispositivo
+from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
+from django.contrib.auth.mixins import LoginRequiredMixin
+from colaboradoresmercos.models import Colaborador
 
 
-@login_required
-class ListarDispositivos(View):
+class ListarDispositivos(LoginRequiredMixin, View):
     def get(self, request):
+        usuario_logado_id = request.user.id
+        colaborador_logado = Colaborador.objects.get(user_id=usuario_logado_id)
+
         dispositivos = busca_dispositivos_nao_excluidos()
-        return render(request, 'listar_dispositivos.html', {'dispositivos': dispositivos})
+        return render(request, 'listar_dispositivos.html', {'dispositivos': dispositivos, 'colaborador_logado': colaborador_logado})
+
+colaborador_logado = Colaborador()
+colaborador_logado.id = request.user.id
 
 
-@login_required
-@administrador_required
-class CadastrarDispositivo(View):
+class CadastrarDispositivo(LoginRequiredMixin, View):
     def get(self, request):
         form = FormDispositivo()
         return render(request, 'cadastrar_dispositivo.html', {'form': form})
@@ -39,9 +47,7 @@ class CadastrarDispositivo(View):
         return redirect(reverse('listar_dispositivos'))
 
 
-@login_required
-@administrador_required
-class AlterarDispositivo(View):
+class AlterarDispositivo(LoginRequiredMixin, View):
     def get(self, request, dispositivo_id=None):
         dispositivo = busca_um_dispositivo(dispositivo_id)
         form = FormDispositivo(initial={'id': dispositivo.id, 'nome': dispositivo.nome, 'descricao': dispositivo.descricao, 'numeromodelo': dispositivo.numeromodelo, 'versao': dispositivo.versao})
@@ -64,16 +70,13 @@ class AlterarDispositivo(View):
         return redirect(reverse('listar_dispositivos'))
 
 
-@login_required
-@administrador_required
-class ExcluirDispositivo(View):
+class ExcluirDispositivo(LoginRequiredMixin, View):
     def get(self, dispositivo_id=None):
         excluir_dispositivo(dispositivo_id)
         return redirect(reverse('listar_dispositivos'))
 
 
-@login_required
-class EmprestarDispositivo(View):
+class EmprestarDispositivo(LoginRequiredMixin, View):
     def get(self, request, dispositivo_id=None):
         dispositivo = busca_um_dispositivo(dispositivo_id)
         form = FormDispositivo(initial={'id': dispositivo.id, 'nome': dispositivo.nome, 'descricao': dispositivo.descricao, 'numeromodelo': dispositivo.numeromodelo, 'versao': dispositivo.versao})
@@ -90,8 +93,7 @@ class EmprestarDispositivo(View):
        # AQUI TEMOS QUE COLOCAR O VINCULO ENTRE DEVICE E COLABORADOR
 
 
-@login_required
-class DevolverDispositivo(View):
+class DevolverDispositivo(LoginRequiredMixin, View):
     def get(self, request, dispositivo_id=None):
         dispositivo = busca_um_dispositivo(dispositivo_id)
         form = FormDispositivo(initial={'id': dispositivo.id, 'nome': dispositivo.nome, 'descricao': dispositivo.descricao, 'numeromodelo': dispositivo.numeromodelo, 'versao': dispositivo.versao})

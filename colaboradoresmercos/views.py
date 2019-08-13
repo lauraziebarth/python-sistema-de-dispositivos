@@ -24,7 +24,7 @@ class CadastrarColaborador(View):
         area = form.cleaned_data['area']
         senha = form.cleaned_data['senha']
 
-        user = User.objects.create(first_name=name, username=email, email=email)
+        user = User.objects.create(first_name=nome, username=email, email=email)
         user.set_password(senha)
         user.save()
 
@@ -39,13 +39,13 @@ class Login(View):
         return render(request, 'login.html', {'form': form})
 
     def post(self, request):
-        username = request.POST['username']
+        email = request.POST['email']
         password = request.POST['password']
-        user = authenticate(request, username=username, password=password)
+        user = authenticate(request, username=email, password=password)
 
         if user is not None:
             login(request, user)
-            # Redirect to a success page.
+            return redirect(reverse('listar_dispositivos'))
         else:
             pass
 

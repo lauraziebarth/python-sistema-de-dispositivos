@@ -19,4 +19,3 @@ class DispositivosColaborador(models.Model):
     emprestimo_ativo = models.BooleanField(default=True)
     ultima_alteracao = models.DateTimeField(null=True)
 
-

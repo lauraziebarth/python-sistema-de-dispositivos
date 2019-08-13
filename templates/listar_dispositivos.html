@@ -10,7 +10,9 @@
 <div class="container">
 
     <div class="my-5">
+        {% if colaborador_logado.admin %}
         <a class="btn btn-primary" href="{% url 'cadastrar_dispositivo' %}">Cadastrar novo dispositivo</a>
+        {% endif %}
     </div>
 
     <table class="table table-bordered table-hover">
@@ -36,9 +38,14 @@
 
 
             <td  class="align-middle">
+
+                {% if colaborador_logado.admin %}
+
                 <a class="btn btn-sm btn-warning" href="{% url 'alterar_dispositivo' dispositivo.id %}">alterar</a>
                 <!-- Button trigger modal EXCLUIR -->
                 <a class="btn btn-sm btn-danger text-light" data-toggle="modal" data-target="#excluir"> excluir </a>
+
+                 {% endif %}
 
                  <!-- Button trigger modal EMPRESTAR -->
                 <a class="btn btn-sm btn-primary text-light" data-toggle="modal" data-target="#emprestar"> emprestar </a>

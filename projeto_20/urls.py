@@ -20,7 +20,7 @@ from dispositivosmercos.views import ListarDispositivos, CadastrarDispositivo, E
 from colaboradoresmercos.views import CadastrarColaborador, Login, PerfilColaborador
 
 urlpatterns = [
-    path('', Login.as_view(), name='login'),
+    path('login/', Login.as_view(), name='login'),
     path('admin/', admin.site.urls),
     path('cadastrar_colaborador/', CadastrarColaborador.as_view(), name='cadastrar_colaborador'),
     path('perfil/', PerfilColaborador.as_view(), name='perfil'),
