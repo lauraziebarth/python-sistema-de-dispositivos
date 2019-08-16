@@ -21,9 +21,6 @@ class ListarDispositivos(LoginRequiredMixin, View):
         dispositivos = busca_dispositivos_nao_excluidos()
         return render(request, 'listar_dispositivos.html', {'dispositivos': dispositivos, 'colaborador_logado': colaborador_logado})
 
-colaborador_logado = Colaborador()
-colaborador_logado.id = request.user.id
-
 
 class CadastrarDispositivo(LoginRequiredMixin, View):
     def get(self, request):
