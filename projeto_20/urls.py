@@ -17,10 +17,11 @@ from django.contrib import admin
 from django.urls import path
 from dispositivosmercos.views import ListarDispositivos, CadastrarDispositivo, ExcluirDispositivo, AlterarDispositivo, \
     EmprestarDispositivo, DevolverDispositivo
-from colaboradoresmercos.views import CadastrarColaborador, Login, PerfilColaborador
+from colaboradoresmercos.views import CadastrarColaborador, Login, PerfilColaborador, Logout
 
 urlpatterns = [
     path('login/', Login.as_view(), name='login'),
+    path('logout/', Logout.as_view(), name='logout'),
     path('admin/', admin.site.urls),
     path('cadastrar_colaborador/', CadastrarColaborador.as_view(), name='cadastrar_colaborador'),
     path('perfil/', PerfilColaborador.as_view(), name='perfil'),
