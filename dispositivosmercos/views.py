@@ -75,32 +75,21 @@ class ExcluirDispositivo(LoginRequiredMixin, View):
 
 class EmprestarDispositivo(LoginRequiredMixin, View):
     def get(self, request, dispositivo_id=None):
-        dispositivo = busca_um_dispositivo(dispositivo_id)
-        form = FormDispositivo(initial={'id': dispositivo.id, 'nome': dispositivo.nome, 'descricao': dispositivo.descricao, 'numeromodelo': dispositivo.numeromodelo, 'versao': dispositivo.versao})
-        return render(request, 'emprestar_dispositivo.html', {'form': form, 'dispositivo_id': dispositivo_id})
+        usuario_logado_id = request.user.id
+        colaborador_logado = Colaborador.objects.get(user_id=usuario_logado_id)
 
-    def post(self, request, dispositivo_id=None):
-        form = FormDispositivo(request.POST)
+        cria_vinculo_colaboradordispositivo(dispositivo_id, colaborador_logado.id)
+        emprestar_dispositivo(dispositivo_id, colaborador_logado.id)
 
-        if not form.is_valid():
-            return render(request, 'alterar_dispositivo.html', {'form': form, 'dispositivo_id': dispositivo_id})
-
-        pass
-
-       # AQUI TEMOS QUE COLOCAR O VINCULO ENTRE DEVICE E COLABORADOR
+        return redirect(reverse('listar_dispositivos'))
 
 
 class DevolverDispositivo(LoginRequiredMixin, View):
     def get(self, request, dispositivo_id=None):
-        dispositivo = busca_um_dispositivo(dispositivo_id)
-        form = FormDispositivo(initial={'id': dispositivo.id, 'nome': dispositivo.nome, 'descricao': dispositivo.descricao, 'numeromodelo': dispositivo.numeromodelo, 'versao': dispositivo.versao})
-        return render(request, 'emprestar_dispositivo.html', {'form': form, 'dispositivo_id': dispositivo_id})
+        usuario_logado_id = request.user.id
+        colaborador_logado = Colaborador.objects.get(user_id=usuario_logado_id)
 
-    def post(self, request, dispositivo_id=None):
-        form = FormDispositivo(request.POST)
+        atualizar_vinculo_colaboradordispositivo_datadedevolucao(dispositivo_id, colaborador_logado.id)
+        devolver_dispositivo(dispositivo_id)
 
-        if not form.is_valid():
-            return render(request, 'alterar_dispositivo.html', {'form': form, 'dispositivo_id': dispositivo_id})
-
-        pass
-       # AQUI TEMOS QUE COLOCAR O VINCULO ENTRE DEVICE E COLABORADOR
+        return redirect(reverse('listar_dispositivos'))
