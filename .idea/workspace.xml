@@ -2,15 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="f74fcb45-3d65-4f23-b146-4ef29382d3d6" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/db.sqlite" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/75d60db4-57ef-4f51-8085-f4ba14e636d8.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/75d60db4-57ef-4f51-8085-f4ba14e636d8.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/colaboradoresmercos/migrations/0001_initial.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/colaboradoresmercos/migrations/0002_colaborador_admin.py" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/dispositivosmercos/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/dispositivosmercos/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/projeto_20/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/projeto_20/settings.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/db.sqlite" beforeDir="false" afterPath="$PROJECT_DIR$/db.sqlite" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/templates/listar_dispositivos.html" beforeDir="false" afterPath="$PROJECT_DIR$/templates/listar_dispositivos.html" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -66,8 +59,17 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dispositivosmercos/models.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="90" selection-start-line="16" selection-start-column="90" selection-end-line="16" selection-end-column="90" />
+            <state relative-caret-position="255">
+              <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/templates/listar_dispositivos.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="249">
+              <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
             </state>
           </provider>
         </entry>
@@ -75,8 +77,8 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dispositivosmercos/views.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="255">
-              <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+            <state relative-caret-position="360">
+              <caret line="93" column="75" selection-start-line="93" selection-start-column="11" selection-end-line="93" selection-end-column="75" />
               <folding>
                 <element signature="e#0#57#0" expanded="true" />
               </folding>
@@ -84,7 +86,7 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/dispositivosmercos/gateway.py">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-336">
@@ -92,6 +94,24 @@
               <folding>
                 <element signature="e#0#38#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://48769b3e-1afb-43dc-ae43-ac2538f99d4b/schema/main/table/dispositivosmercos_dispositivoscolaborador">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="false">
+        <entry file="das://48769b3e-1afb-43dc-ae43-ac2538f99d4b/schema/main/table/dispositivosmercos_dispositivos">
+          <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+            <state>
+              <filtering enabled="true" />
             </state>
           </provider>
         </entry>
@@ -154,8 +174,6 @@
         <option value="$PROJECT_DIR$/colaboradoresmercos/views.py" />
         <option value="$PROJECT_DIR$/dispositivosmercos/models.py" />
         <option value="$PROJECT_DIR$/dispositivosmercos/models.py" />
-        <option value="$PROJECT_DIR$/templates/listar_dispositivos.html" />
-        <option value="$PROJECT_DIR$/templates/listar_dispositivos.html" />
         <option value="$PROJECT_DIR$/dispositivosmercos/gateway.py" />
         <option value="$PROJECT_DIR$/dispositivosmercos/gateway.py" />
         <option value="$PROJECT_DIR$/dispositivosmercos/migrations/__init__.py" />
@@ -163,6 +181,8 @@
         <option value="$PROJECT_DIR$/projeto_20/settings.py" />
         <option value="$PROJECT_DIR$/dispositivosmercos/views.py" />
         <option value="$PROJECT_DIR$/dispositivosmercos/views.py" />
+        <option value="$PROJECT_DIR$/templates/listar_dispositivos.html" />
+        <option value="$PROJECT_DIR$/templates/listar_dispositivos.html" />
       </list>
     </option>
   </component>
@@ -189,6 +209,11 @@
               <item name="projeto_20" type="b2602c69:ProjectViewProjectNode" />
               <item name="projeto_20" type="462c0819:PsiDirectoryNode" />
               <item name="dispositivosmercos" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="projeto_20" type="b2602c69:ProjectViewProjectNode" />
+              <item name="projeto_20" type="462c0819:PsiDirectoryNode" />
+              <item name="templates" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -268,18 +293,18 @@
       <workItem from="1566238092584" duration="1590000" />
       <workItem from="1566240047369" duration="453000" />
       <workItem from="1566240505483" duration="1302000" />
-      <workItem from="1566241871244" duration="1354000" />
+      <workItem from="1566241871244" duration="2872000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="77470000" />
+    <option name="totallyTimeSpent" value="78988000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="0" y="23" width="1920" height="976" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.16027689" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.16027689" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.24973376" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -295,7 +320,7 @@
       <window_info anchor="bottom" id="Database Changes" order="10" show_stripe_button="false" weight="0.32911393" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.5007153" side_tool="true" weight="0.32905984" />
       <window_info anchor="bottom" id="Python Console" order="12" weight="0.32911393" />
-      <window_info anchor="bottom" id="Terminal" order="13" sideWeight="0.49928468" visible="true" weight="0.3540724" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="13" sideWeight="0.49928468" visible="true" weight="0.3540724" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
@@ -350,13 +375,6 @@
     </expressions>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/templates/perfil_colaborador.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="22" column="17" lean-forward="true" selection-start-line="22" selection-start-column="17" selection-end-line="22" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/templates/menu_mercos.html" />
     <entry file="file://$USER_HOME$/.pyenv/versions/3.7.1/lib/python3.7/site-packages/django/core/handlers/exception.py">
       <provider selected="true" editor-type-id="text-editor">
@@ -493,13 +511,6 @@
     <entry file="file://$PROJECT_DIR$/dispositivosmercos/tests.py">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/templates/listar_dispositivos.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="312">
-          <caret line="96" column="100" selection-start-line="96" selection-start-column="100" selection-end-line="96" selection-end-column="100" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://583a43ed-23b9-4a00-bc86-8d11aa0fa66c/schema/main/table/colaboradoresmercos_colaborador">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -549,13 +560,6 @@
     <entry file="file://$APPLICATION_CONFIG_DIR$/consoles/db/846c2c1b-4fec-4b08-a4c7-51d817fb5efd/console.sql">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
-    <entry file="das://48769b3e-1afb-43dc-ae43-ac2538f99d4b/schema/main/table/dispositivosmercos_dispositivoscolaborador">
-      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
-        <state>
-          <filtering enabled="true" />
-        </state>
-      </provider>
-    </entry>
     <entry file="das://48769b3e-1afb-43dc-ae43-ac2538f99d4b/schema/main/table/colaboradoresmercos_colaborador">
       <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
         <state>
@@ -599,17 +603,31 @@
     <entry file="file://$PROJECT_DIR$/db.sqlite">
       <provider selected="true" editor-type-id="text-editor" />
     </entry>
+    <entry file="das://48769b3e-1afb-43dc-ae43-ac2538f99d4b/schema/main/table/dispositivosmercos_dispositivos">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/dispositivosmercos/models.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="90" selection-start-line="16" selection-start-column="90" selection-end-line="16" selection-end-column="90" />
+        <state relative-caret-position="255">
+          <caret line="17" column="36" lean-forward="true" selection-start-line="17" selection-start-column="36" selection-end-line="17" selection-end-column="36" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="das://48769b3e-1afb-43dc-ae43-ac2538f99d4b/schema/main/table/dispositivosmercos_dispositivoscolaborador">
+      <provider selected="true" editor-type-id="com.intellij.database.editor.DatabaseTableFileEditorProvider">
+        <state>
+          <filtering enabled="true" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/dispositivosmercos/views.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="86" lean-forward="true" selection-start-line="86" selection-end-line="86" />
+        <state relative-caret-position="360">
+          <caret line="93" column="75" selection-start-line="93" selection-start-column="11" selection-end-line="93" selection-end-column="75" />
           <folding>
             <element signature="e#0#57#0" expanded="true" />
           </folding>
@@ -623,6 +641,13 @@
           <folding>
             <element signature="e#0#38#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/templates/listar_dispositivos.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249">
+          <caret line="138" lean-forward="true" selection-start-line="138" selection-end-line="138" />
         </state>
       </provider>
     </entry>

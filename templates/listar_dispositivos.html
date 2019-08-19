@@ -19,6 +19,8 @@
         <a class="btn btn-primary" href="{% url 'logout' %}">Sair</a>
     </div>
 
+<h4> Dispositivos disponíveis</h4>
+
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
@@ -27,12 +29,13 @@
           <th width="20%" scope="col" class="align-middle">Descrição</th>
           <th width="15%" scope="col" class="align-middle">Numero do Modelo</th>
           <th width="10%" scope="col" class="align-middle">Versão</th>
-          <th width="30%" scope="col" class="align-middle">Ações</th>
+          <th width="20%" scope="col" class="align-middle">Ações</th>
 
         </tr>
       </thead>
       <tbody>
         {% for dispositivo in dispositivos %}
+            {% if dispositivo.disponivel %}
             <tr>
               <th scope="row"  class="align-middle" >{{ dispositivo.os }}</th>
               <td  class="align-middle">{{ dispositivo.nome }}</td>
@@ -53,9 +56,6 @@
 
                  <!-- Button trigger modal EMPRESTAR -->
                 <a class="btn btn-sm btn-primary text-light" data-toggle="modal" data-target="#emprestar"> emprestar </a>
-
-                 <!-- Button trigger modal DEVOLVER -->
-                <a class="btn btn-sm btn-success text-light" data-toggle="modal" data-target="#devolver"> devolver </a>
 
                 <!-- Modal EXCLUIR -->
                 <div class="modal fade" id="excluir" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -100,6 +100,77 @@
                       </div>
                 </div>
 
+            </td>
+
+            </tr>
+            {% endif %}
+        {% endfor %}
+      </tbody>
+    </table>
+<br><br>
+
+<h4> Dispositivos emprestados</h4>
+
+    <table class="table table-bordered table-hover">
+      <thead>
+        <tr>
+          <th width="5%" scope="col" class="align-middle">SO</th>
+          <th width="10%" scope="col" class="align-middle">Nome</th>
+          <th width="15%" scope="col" class="align-middle">Descrição</th>
+          <th width="10%" scope="col" class="align-middle">Numero do Modelo</th>
+          <th width="10%" scope="col" class="align-middle">Versão</th>
+          <th width="20%" scope="col" class="align-middle">Colaborador c/ Dispositivo</th>
+          <th width="20%" scope="col" class="align-middle">Ações</th>
+
+        </tr>
+      </thead>
+      <tbody>
+        {% for dispositivo in dispositivos %}
+            {% if dispositivo.disponivel == False %}
+
+            <tr>
+              <th scope="row"  class="align-middle" >{{ dispositivo.os }}</th>
+              <td  class="align-middle">{{ dispositivo.nome }}</td>
+              <td  class="align-middle">{{ dispositivo.descricao }}</td>
+              <td  class="align-middle">{{ dispositivo.numeromodelo }}</td>
+              <td  class="align-middle">{{ dispositivo.versao }}</td>
+              <td  class="align-middle">{{ dispositivocolaborador.colaborador_id }}</td>
+
+
+            <td  class="align-middle">
+
+                {% if colaborador_logado.admin %}
+
+                <a class="btn btn-sm btn-warning" href="{% url 'alterar_dispositivo' dispositivo.id %}">alterar</a>
+                <!-- Button trigger modal EXCLUIR -->
+                <a class="btn btn-sm btn-danger text-light" data-toggle="modal" data-target="#excluir"> excluir </a>
+
+                 {% endif %}
+
+                 <!-- Button trigger modal DEVOLVER -->
+                <a class="btn btn-sm btn-success text-light" data-toggle="modal" data-target="#devolver"> devolver </a>
+
+                <!-- Modal EXCLUIR -->
+                <div class="modal fade" id="excluir" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                      <div class="modal-dialog modal-dialog-centered" role="document">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <h5 class="modal-title" id="confirmasequerexcluir">Deseja realmente excluir?</h5>
+                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                              <span aria-hidden="true">&times;</span>
+                              </button>
+                          </div>
+                          <div class="modal-body">
+                            Você está prestes a excluir um dispostivo! <br> Essa ação não poderá ser desfeita.
+                          </div>
+                          <div class="modal-footer">
+                              <a class="btn btn-sm btn-secondary text-light" data-dismiss="modal">Fechar</a>
+                              <a class="btn btn-sm btn-danger text-light" href="{% url 'excluir_dispositivo' dispositivo.id %}">Excluir</a>
+                          </div>
+                        </div>
+                      </div>
+                </div>
+
 
                 <!-- Modal DEVOLVER -->
                 <div class="modal fade" id="devolver" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -126,11 +197,10 @@
                 </div>
 
 
-
-
             </td>
 
             </tr>
+            {% endif %}
         {% endfor %}
       </tbody>
     </table>
