@@ -6,7 +6,9 @@ from dispositivosmercos.models import Dispositivos
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth import authenticate
-from dispositivosmercos.gateway import busca_dispositivos_nao_excluidos, busca_um_dispositivo, alterar_dispositivo, excluir_dispositivo, cria_novo_dispositivo
+from dispositivosmercos.gateway import busca_dispositivos_nao_excluidos, busca_um_dispositivo, alterar_dispositivo,\
+    excluir_dispositivo, cria_novo_dispositivo, emprestar_dispositivo, devolver_dispositivo, \
+    criar_vinculo_colaboradordispositivo_emprestimo, atualizar_vinculo_colaboradordispositivo_datadedevolucao
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -78,7 +80,7 @@ class EmprestarDispositivo(LoginRequiredMixin, View):
         usuario_logado_id = request.user.id
         colaborador_logado = Colaborador.objects.get(user_id=usuario_logado_id)
 
-        cria_vinculo_colaboradordispositivo(dispositivo_id, colaborador_logado.id)
+        criar_vinculo_colaboradordispositivo_emprestimo(dispositivo_id, colaborador_logado.id)
         emprestar_dispositivo(dispositivo_id, colaborador_logado.id)
 
         return redirect(reverse('listar_dispositivos'))

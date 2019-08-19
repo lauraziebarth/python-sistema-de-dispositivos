@@ -3,7 +3,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 
 from datetime import datetime
-from dispositivosmercos.models import Dispositivos
+from dispositivosmercos.models import Dispositivos, DispositivosColaborador
 
 
 def busca_dispositivos_nao_excluidos():
