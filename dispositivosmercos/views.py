@@ -81,7 +81,7 @@ class EmprestarDispositivo(LoginRequiredMixin, View):
         colaborador_logado = Colaborador.objects.get(user_id=usuario_logado_id)
 
         criar_vinculo_colaboradordispositivo_emprestimo(dispositivo_id, colaborador_logado.id)
-        emprestar_dispositivo(dispositivo_id, colaborador_logado.id)
+        emprestar_dispositivo(dispositivo_id)
 
         return redirect(reverse('listar_dispositivos'))
 
