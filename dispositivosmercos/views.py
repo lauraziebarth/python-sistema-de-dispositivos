@@ -24,6 +24,15 @@ class ListarDispositivos(LoginRequiredMixin, View):
         return render(request, 'listar_dispositivos.html', {'dispositivos': dispositivos, 'colaborador_logado': colaborador_logado})
 
 
+class ListarDispositivosEmprestados(LoginRequiredMixin, View):
+    def get(self, request):
+        usuario_logado_id = request.user.id
+        colaborador_logado = Colaborador.objects.get(user_id=usuario_logado_id)
+
+        dispositivos = busca_dispositivos_nao_excluidos()
+        return render(request, 'listar_dispositivos_emprestados.html', {'dispositivos': dispositivos, 'colaborador_logado': colaborador_logado})
+
+
 class CadastrarDispositivo(LoginRequiredMixin, View):
     def get(self, request):
         form = FormDispositivo()

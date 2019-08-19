@@ -16,7 +16,7 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from dispositivosmercos.views import ListarDispositivos, CadastrarDispositivo, ExcluirDispositivo, AlterarDispositivo, \
-    EmprestarDispositivo, DevolverDispositivo
+    EmprestarDispositivo, DevolverDispositivo, ListarDispositivosEmprestados
 from colaboradoresmercos.views import CadastrarColaborador, Login, PerfilColaborador, Logout
 
 urlpatterns = [
@@ -27,6 +27,7 @@ urlpatterns = [
     path('perfil/', PerfilColaborador.as_view(), name='perfil'),
 
     path('dispositivos/', ListarDispositivos.as_view(), name='listar_dispositivos'),
+    path('dispositivos_emprestados/', ListarDispositivosEmprestados.as_view(), name='listar_dispositivos_emprestados'),
     path('cadastrar_dispositivo/', CadastrarDispositivo.as_view(), name='cadastrar_dispositivo'),
     path('alterar_dispositivo/<int:dispositivo_id>/', AlterarDispositivo.as_view(), name='alterar_dispositivo'),
     path('excluir_dispositivo/<int:dispositivo_id>/', ExcluirDispositivo.as_view(), name='excluir_dispositivo'),

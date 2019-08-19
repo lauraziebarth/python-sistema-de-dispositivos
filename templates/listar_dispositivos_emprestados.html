@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Lista de Dispositivos Disponiveis</title>
+    <title>Lista de Dispositivos Emprestados</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 </head>
 <body>
@@ -17,7 +17,7 @@
       <a class="nav-item nav-link active" href="{% url 'login' %}">Home <span class="sr-only">(current)</span></a>
       <a class="nav-item nav-link" href="{% url 'listar_dispositivos' %}">Dispositivos</a>
       <a class="nav-item nav-link" href="{% url 'listar_dispositivos_emprestados' %}">Dispositivos Emprestados</a>
-          {% if colaborador_logado.admin %}
+        {% if colaborador_logado.admin %}
       <a class="nav-item nav-link" href="{% url 'cadastrar_dispositivo' %}">Cadastrar novo dispositivo</a>
         {% endif %}
       <a class="nav-item nav-link" href="{% url 'logout' %}">Sair</a>
@@ -29,29 +29,32 @@
 <br><br>
 <div class="container">
 
-<h4> Dispositivos disponíveis</h4>
+<h4> Dispositivos emprestados</h4>
 
     <table class="table table-bordered table-hover">
       <thead>
         <tr>
-          <th width="10%" scope="col" class="align-middle">SO</th>
-          <th width="15%" scope="col" class="align-middle">Nome</th>
-          <th width="20%" scope="col" class="align-middle">Descrição</th>
-          <th width="15%" scope="col" class="align-middle">Numero do Modelo</th>
+          <th width="5%" scope="col" class="align-middle">SO</th>
+          <th width="10%" scope="col" class="align-middle">Nome</th>
+          <th width="15%" scope="col" class="align-middle">Descrição</th>
+          <th width="10%" scope="col" class="align-middle">Numero do Modelo</th>
           <th width="10%" scope="col" class="align-middle">Versão</th>
+          <th width="20%" scope="col" class="align-middle">Colaborador c/ Dispositivo</th>
           <th width="20%" scope="col" class="align-middle">Ações</th>
 
         </tr>
       </thead>
       <tbody>
         {% for dispositivo in dispositivos %}
-            {% if dispositivo.disponivel %}
+            {% if dispositivo.disponivel == False %}
+
             <tr>
               <th scope="row"  class="align-middle" >{{ dispositivo.os }}</th>
               <td  class="align-middle">{{ dispositivo.nome }}</td>
               <td  class="align-middle">{{ dispositivo.descricao }}</td>
               <td  class="align-middle">{{ dispositivo.numeromodelo }}</td>
               <td  class="align-middle">{{ dispositivo.versao }}</td>
+              <td  class="align-middle">{{ dispositivocolaborador.colaborador_id }}</td>
 
 
             <td  class="align-middle">
@@ -64,8 +67,8 @@
 
                  {% endif %}
 
-                 <!-- Button trigger modal EMPRESTAR -->
-                <a class="btn btn-sm btn-primary text-light" data-toggle="modal" data-target="#emprestar"> emprestar </a>
+                 <!-- Button trigger modal DEVOLVER -->
+                <a class="btn btn-sm btn-success text-light" data-toggle="modal" data-target="#devolver"> devolver </a>
 
                 <!-- Modal EXCLUIR -->
                 <div class="modal fade" id="excluir" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -89,26 +92,30 @@
                 </div>
 
 
-                <!-- Modal EMPRESTAR -->
-                <div class="modal fade" id="emprestar" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                <!-- Modal DEVOLVER -->
+                <div class="modal fade" id="devolver" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
-                            <h5 class="modal-title" id="confirmasequeremprestar">Deseja emprestar esse dispositivo?</h5>
+                            <h5 class="modal-title" id="confirmasequerdevolver">Deseja realmente devolver esse dispositivo?</h5>
                               <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                               <span aria-hidden="true">&times;</span>
                               </button>
                           </div>
                           <div class="modal-body">
-                            Esse dispositivo ficará em seu nome até que você clique em Devolver. <br>
+                              <b>Antes de devolver lembre-se:</b> <br>
+                              - Sair da sua conta no app Mercos.<br>
+                              - Tirar o app do modo Sandbox.<br>
+                              - Coloque o dispositivo para carregar.<br>
                           </div>
                           <div class="modal-footer">
                               <a class="btn btn-sm btn-secondary text-light" data-dismiss="modal">Fechar</a>
-                              <a class="btn btn-sm btn-primary text-light" href="{% url 'emprestar_dispositivo' dispositivo.id %}">Emprestar</a>
+                              <a class="btn btn-sm btn-success text-light" href="{% url 'devolver_dispositivo' dispositivo.id %}">Devolver</a>
                           </div>
                         </div>
                       </div>
                 </div>
+
 
             </td>
 
@@ -117,8 +124,6 @@
         {% endfor %}
       </tbody>
     </table>
-<br><br>
-
 
 </div>
 
