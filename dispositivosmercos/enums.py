@@ -1,8 +1,8 @@
 # sistema operacional dos dispositivos
 
 DISPOSITIVOS_OS = (
-    ('1', 'Android'),
-    ('2', 'iOS')
+    ('andrid', 'Android'),
+    ('ios', 'iOS')
 )
 
 # dispositivos disponiveis para emprestino ios

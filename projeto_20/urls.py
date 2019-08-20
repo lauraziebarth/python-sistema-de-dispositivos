@@ -16,22 +16,35 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path
 from dispositivosmercos.views import ListarDispositivos, CadastrarDispositivo, ExcluirDispositivo, AlterarDispositivo, \
-    EmprestarDispositivo, DevolverDispositivo, ListarDispositivosEmprestados
+    EmprestarDispositivo, DevolverDispositivo, ListarDispositivosEmprestados, ListarDispositivosEmprestadosColaborador
 from colaboradoresmercos.views import CadastrarColaborador, Login, PerfilColaborador, Logout
 
 urlpatterns = [
-    path('login/', Login.as_view(), name='login'),
-    path('logout/', Logout.as_view(), name='logout'),
+    path('login/', Login.as_view(),
+         name='login'),
+    path('logout/', Logout.as_view(),
+         name='logout'),
     path('admin/', admin.site.urls),
-    path('cadastrar_colaborador/', CadastrarColaborador.as_view(), name='cadastrar_colaborador'),
-    path('perfil/', PerfilColaborador.as_view(), name='perfil'),
+    path('cadastrar_colaborador/', CadastrarColaborador.as_view(),
+         name='cadastrar_colaborador'),
+    path('perfil/', PerfilColaborador.as_view(),
+         name='perfil'),
 
-    path('dispositivos/', ListarDispositivos.as_view(), name='listar_dispositivos'),
-    path('dispositivos_emprestados/', ListarDispositivosEmprestados.as_view(), name='listar_dispositivos_emprestados'),
-    path('cadastrar_dispositivo/', CadastrarDispositivo.as_view(), name='cadastrar_dispositivo'),
-    path('alterar_dispositivo/<int:dispositivo_id>/', AlterarDispositivo.as_view(), name='alterar_dispositivo'),
-    path('excluir_dispositivo/<int:dispositivo_id>/', ExcluirDispositivo.as_view(), name='excluir_dispositivo'),
-    path('emprestar_dispositivo/<int:dispositivo_id>/', EmprestarDispositivo.as_view(), name='emprestar_dispositivo'),
-    path('devolver_dispositivo/<int:dispositivo_id>/', DevolverDispositivo.as_view(), name='devolver_dispositivo'),
+    path('dispositivos/', ListarDispositivos.as_view(),
+         name='listar_dispositivos'),
+    path('dispositivos_emprestados/', ListarDispositivosEmprestados.as_view(),
+         name='listar_dispositivos_emprestados'),
+    path('dispositivos_emprestados_colaborador/', ListarDispositivosEmprestadosColaborador.as_view(),
+         name='listar_dispositivos_emprestados_colaborador'),
+    path('cadastrar_dispositivo/', CadastrarDispositivo.as_view(),
+         name='cadastrar_dispositivo'),
+    path('alterar_dispositivo/<int:dispositivo_id>/', AlterarDispositivo.as_view(),
+         name='alterar_dispositivo'),
+    path('excluir_dispositivo/<int:dispositivo_id>/', ExcluirDispositivo.as_view(),
+         name='excluir_dispositivo'),
+    path('emprestar_dispositivo/<int:dispositivo_id>/', EmprestarDispositivo.as_view(),
+         name='emprestar_dispositivo'),
+    path('devolver_dispositivo/<int:dispositivo_id>/', DevolverDispositivo.as_view(),
+         name='devolver_dispositivo'),
 
 ]

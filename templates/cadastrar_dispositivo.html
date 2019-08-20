@@ -15,16 +15,17 @@
         <span class="navbar-toggler-icon"></span>
       </button>
 
-      <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-        <div class="navbar-nav">
-          <a class="nav-item nav-link" href="{% url 'listar_dispositivos' %}">Dispositivos</a>
-          <a class="nav-item nav-link" href="{% url 'listar_dispositivos_emprestados' %}">Dispositivos Emprestados</a>
-            {% if colaborador_logado.admin %}
-          <a class="nav-item nav-link" href="{% url 'cadastrar_dispositivo' %}">Cadastrar novo dispositivo</a>
-            {% endif %}
-          <a class="nav-item nav-link" href="{% url 'logout' %}">Sair</a>
+     <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+    <div class="navbar-nav">
+      <a class="nav-item nav-link" href="{% url 'listar_dispositivos' %}">Dispositivos</a>
+      <a class="nav-item nav-link" href="{% url 'listar_dispositivos_emprestados_colaborador' %}">Seus Dispositivos</a>
+      <a class="nav-item nav-link" href="{% url 'listar_dispositivos_emprestados' %}">Dispositivos Emprestados</a>
+          {% if colaborador_logado.admin %}
+      <a class="nav-item nav-link" href="{% url 'cadastrar_dispositivo' %}">Cadastrar novo dispositivo</a>
+        {% endif %}
+      <a class="nav-item nav-link" href="{% url 'logout' %}">Sair</a>
 
-        </div>
+    </div>
       </div>
     </nav>
 
