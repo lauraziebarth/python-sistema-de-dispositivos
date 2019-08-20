@@ -6,9 +6,9 @@ from dispositivosmercos.models import Dispositivos
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth import authenticate
-from dispositivosmercos.gateway import busca_dispositivos_nao_excluidos, busca_um_dispositivo, alterar_dispositivo,\
+from dispositivosmercos.gateway import busca_dispositivos_nao_excluidos, busca_um_dispositivo, alterar_dispositivo, \
     excluir_dispositivo, cria_novo_dispositivo, emprestar_dispositivo, devolver_dispositivo, \
-    criar_vinculo_colaboradordispositivo_emprestimo, atualizar_vinculo_colaboradordispositivo_datadedevolucao
+    criar_vinculo_colaboradordispositivo_emprestimo, atualizar_vinculo_colaboradordispositivo_datadedevolucao, busca_dispositivos_emprestados
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -38,8 +38,11 @@ class ListarDispositivosEmprestadosColaborador(LoginRequiredMixin, View):
         usuario_logado_id = request.user.id
         colaborador_logado = Colaborador.objects.get(user_id=usuario_logado_id)
 
-        dispositivos = busca_dispositivos_nao_excluidos()
-        return render(request, 'listar_dispositivos_emprestados_colaborador.html', {'dispositivos': dispositivos, 'colaborador_logado': colaborador_logado})
+        vinculos = busca_dispositivos_emprestados(colaborador_logado.id)
+        return render(request, 'listar_dispositivos_emprestados_colaborador.html', {
+            'vinculos': vinculos,
+            'colaborador_logado': colaborador_logado
+        })
 
 
 class CadastrarDispositivo(LoginRequiredMixin, View):
@@ -105,11 +108,8 @@ class EmprestarDispositivo(LoginRequiredMixin, View):
 
 
 class DevolverDispositivo(LoginRequiredMixin, View):
-    def get(self, request, dispositivo_id=None):
-        usuario_logado_id = request.user.id
-        colaborador_logado = Colaborador.objects.get(user_id=usuario_logado_id)
-
-        atualizar_vinculo_colaboradordispositivo_datadedevolucao(dispositivo_id, colaborador_logado.id)
-        devolver_dispositivo(dispositivo_id)
+    def get(self, request, vinculo_id=None):
+        vinculo = atualizar_vinculo_colaboradordispositivo_datadedevolucao(vinculo_id)
+        devolver_dispositivo(vinculo.dispositivo_id)
 
         return redirect(reverse('listar_dispositivos'))

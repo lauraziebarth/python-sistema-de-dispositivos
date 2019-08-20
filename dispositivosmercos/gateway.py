@@ -50,8 +50,8 @@ def busca_dispositivos_emprestados_por_colaborador(colaborador_id):
     return DispositivosColaborador.objects.get(colaborador_id=colaborador_id)
 
 
-def busca_vinculo_colaboradordispositivo(dispositivo_id, colaborador_id):
-    return DispositivosColaborador.objects.get(dispositivo_id=dispositivo_id, colaborador_id=colaborador_id)
+def busca_vinculo_colaboradordispositivo(vinculo_id):
+    return DispositivosColaborador.objects.get(id=vinculo_id)
 
 
 def criar_vinculo_colaboradordispositivo_emprestimo(dispositivo_id, colaborador_id):
@@ -69,11 +69,12 @@ def emprestar_dispositivo(dispositivo_id):
     dispositivo.save()
 
 
-def atualizar_vinculo_colaboradordispositivo_datadedevolucao(dispositivo_id, colaborador_id):
-    dispositivoscolaborador = busca_vinculo_colaboradordispositivo(dispositivo_id=dispositivo_id, colaborador_id=colaborador_id)
+def atualizar_vinculo_colaboradordispositivo_datadedevolucao(vinculo_id):
+    dispositivoscolaborador = busca_vinculo_colaboradordispositivo(vinculo_id)
     dispositivoscolaborador.data_de_devolucao = datetime.now()
     dispositivoscolaborador.ultima_alteracao = datetime.now()
     dispositivoscolaborador.save()
+    return dispositivoscolaborador
 
 
 def devolver_dispositivo(dispositivo_id):
@@ -81,5 +82,10 @@ def devolver_dispositivo(dispositivo_id):
     dispositivo.disponivel = True
     dispositivo.ultima_alteracao = datetime.now()
     dispositivo.save()
-    
 
+
+def busca_dispositivos_emprestados(colaborador_logado):
+    return DispositivosColaborador.objects.select_related('dispositivo') \
+        .filter(colaborador_id=colaborador_logado,
+                data_de_devolucao__isnull=True,
+                dispositivo__disponivel=False)

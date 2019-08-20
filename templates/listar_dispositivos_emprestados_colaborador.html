@@ -45,81 +45,48 @@
         </tr>
       </thead>
       <tbody>
-        {% for dispositivo in dispositivos %}
-            {% if dispositivo.disponivel == False %}
-
+        {% for vinculo in vinculos %}
             <tr>
-              <th scope="row"  class="align-middle" >{{ dispositivo.nome }}</th>
-              <td  class="align-middle">{{ dispositivo.descricao }}</td>
-              <td  class="align-middle">{{ dispositivo.numeromodelo }}</td>
-              <td  class="align-middle">{{ dispositivo.os }}</td>
-              <td  class="align-middle">{{ dispositivo.versao }}</td>
+              <th scope="row" class="align-middle" >{{ vinculo.dispositivo.nome }}</th>
+              <td  class="align-middle">{{ vinculo.dispositivo.descricao }}</td>
+              <td  class="align-middle">{{ vinculo.dispositivo.numeromodelo }}</td>
+              <td  class="align-middle">{{ vinculo.dispositivo.os }}</td>
+              <td  class="align-middle">{{ vinculo.dispositivo.versao }}</td>
 
 
             <td  class="align-middle">
 
-                {% if colaborador_logado.admin %}
-
-                <a class="btn btn-sm btn-warning" href="{% url 'alterar_dispositivo' dispositivo.id %}">alterar</a>
-                <!-- Button trigger modal EXCLUIR -->
-                <a class="btn btn-sm btn-danger text-light" data-toggle="modal" data-target="#excluir"> excluir </a>
-
-                 {% endif %}
-
-                 <!-- Button trigger modal DEVOLVER -->
+                <!-- Button trigger modal DEVOLVER -->
                 <a class="btn btn-sm btn-success text-light" data-toggle="modal" data-target="#devolver"> devolver </a>
-
-                <!-- Modal EXCLUIR -->
-                <div class="modal fade" id="excluir" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="confirmasequerexcluir">Deseja realmente excluir?</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                              </button>
-                          </div>
-                          <div class="modal-body">
-                            Você está prestes a excluir um dispostivo! <br> Essa ação não poderá ser desfeita.
-                          </div>
-                          <div class="modal-footer">
-                              <a class="btn btn-sm btn-secondary text-light" data-dismiss="modal">Fechar</a>
-                              <a class="btn btn-sm btn-danger text-light" href="{% url 'excluir_dispositivo' dispositivo.id %}">Excluir</a>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-
 
                 <!-- Modal DEVOLVER -->
                 <div class="modal fade" id="devolver" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="confirmasequerdevolver">Deseja realmente devolver esse dispositivo?</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                              </button>
-                          </div>
-                          <div class="modal-body">
-                              <b>Antes de devolver lembre-se:</b> <br>
-                              - Sair da sua conta no app Mercos.<br>
-                              - Tirar o app do modo Sandbox.<br>
-                              - Coloque o dispositivo para carregar.<br>
-                          </div>
-                          <div class="modal-footer">
-                              <a class="btn btn-sm btn-secondary text-light" data-dismiss="modal">Fechar</a>
-                              <a class="btn btn-sm btn-success text-light" href="{% url 'devolver_dispositivo' dispositivo.id %}">Devolver</a>
-                          </div>
-                        </div>
+                  <div class="modal-dialog modal-dialog-centered" role="document">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <h5 class="modal-title" id="confirmasequerdevolver">Deseja realmente devolver esse dispositivo?</h5>
+                          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                          <span aria-hidden="true">&times;</span>
+                          </button>
                       </div>
+                      <div class="modal-body">
+                          <b>Antes de devolver lembre-se:</b> <br>
+                          - Sair da sua conta no app Mercos.<br>
+                          - Tirar o app do modo Sandbox.<br>
+                          - Coloque o dispositivo para carregar.<br>
+                      </div>
+                      <div class="modal-footer">
+                          <a class="btn btn-sm btn-secondary text-light" data-dismiss="modal">Fechar</a>
+                          <a class="btn btn-sm btn-success text-light" href="{% url 'devolver_dispositivo' vinculo.id %}">Devolver</a>
+                      </div>
+                    </div>
+                  </div>
                 </div>
 
 
             </td>
 
             </tr>
-            {% endif %}
         {% endfor %}
       </tbody>
     </table>

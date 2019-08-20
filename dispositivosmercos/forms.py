@@ -3,11 +3,12 @@ from __future__ import absolute_import
 from __future__ import print_function
 from __future__ import unicode_literals
 from django import forms
-from dispositivosmercos.enums import DISPOSITIVOS_OS
+
+from dispositivosmercos.enums import DispositivosEnum
 
 
 class FormDispositivo(forms.Form):
-    sistema_operacional = forms.ChoiceField(choices=DISPOSITIVOS_OS, required=True)
+    sistema_operacional = forms.ChoiceField(choices=DispositivosEnum.choices(), required=True)
     nome = forms.CharField(max_length=30, required=True)
     descricao = forms.CharField(max_length=30, required=True)
     numeromodelo = forms.CharField(max_length=30, required=True)

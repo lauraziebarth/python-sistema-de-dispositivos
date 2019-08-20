@@ -44,7 +44,7 @@ urlpatterns = [
          name='excluir_dispositivo'),
     path('emprestar_dispositivo/<int:dispositivo_id>/', EmprestarDispositivo.as_view(),
          name='emprestar_dispositivo'),
-    path('devolver_dispositivo/<int:dispositivo_id>/', DevolverDispositivo.as_view(),
+    path('devolver_dispositivo/<int:vinculo_id>/', DevolverDispositivo.as_view(),
          name='devolver_dispositivo'),
 
 ]
