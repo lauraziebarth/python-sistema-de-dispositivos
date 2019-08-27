@@ -1,130 +1,107 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Dispositivos Disponiveis</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body>
+{% extends 'base.html' %}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+{% block title %}Lista de Dispositivos Disponiveis{% endblock %}
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+{% block active_listar_dispositivos %}active{% endblock %}
 
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" href="{% url 'listar_dispositivos' %}">Dispositivos</a>
-      <a class="nav-item nav-link" href="{% url 'listar_dispositivos_emprestados_colaborador' %}">Seus Dispositivos</a>
-      <a class="nav-item nav-link" href="{% url 'listar_dispositivos_emprestados' %}">Dispositivos Emprestados</a>
-          {% if colaborador_logado.admin %}
-      <a class="nav-item nav-link" href="{% url 'cadastrar_dispositivo' %}">Cadastrar novo dispositivo</a>
-        {% endif %}
-      <a class="nav-item nav-link" href="{% url 'logout' %}">Sair</a>
+{% block body %}
 
-    </div>
-  </div>
-</nav>
+    <br><br>
+    <div class="container">
 
-<br><br>
-<div class="container">
+    <h4> Dispositivos disponíveis</h4>
 
-<h4> Dispositivos disponíveis</h4>
-
-    <table class="table table-bordered table-hover">
-      <thead>
-        <tr>
-          <th width="10%" scope="col" class="align-middle">Nome</th>
-          <th width="15%" scope="col" class="align-middle">Descrição</th>
-          <th width="10%" scope="col" class="align-middle">Numero do Modelo</th>
-          <th width="10%" scope="col" class="align-middle">SO</th>
-          <th width="10%" scope="col" class="align-middle">Versão</th>
-          <th width="20%" scope="col" class="align-middle">Ações</th>
-
-        </tr>
-      </thead>
-      <tbody>
-        {% for dispositivo in dispositivos %}
-            {% if dispositivo.disponivel %}
+        <table class="table table-bordered table-hover">
+          <thead>
             <tr>
-              <th scope="row"  class="align-middle" >{{ dispositivo.nome }}</th>
-              <td  class="align-middle">{{ dispositivo.descricao }}</td>
-              <td  class="align-middle">{{ dispositivo.numeromodelo }}</td>
-              <td  class="align-middle">{{ dispositivo.os }}</td>
-              <td  class="align-middle">{{ dispositivo.versao }}</td>
-
-
-            <td  class="align-middle">
-
-                {% if colaborador_logado.admin %}
-
-                <a class="btn btn-sm btn-warning" href="{% url 'alterar_dispositivo' dispositivo.id %}">alterar</a>
-                <!-- Button trigger modal EXCLUIR -->
-                <a class="btn btn-sm btn-danger text-light" data-toggle="modal" data-target="#excluir"> excluir </a>
-
-                 {% endif %}
-
-                 <!-- Button trigger modal EMPRESTAR -->
-                <a class="btn btn-sm btn-primary text-light" data-toggle="modal" data-target="#emprestar"> emprestar </a>
-
-                <!-- Modal EXCLUIR -->
-                <div class="modal fade" id="excluir" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="confirmasequerexcluir">Deseja realmente excluir?</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                              </button>
-                          </div>
-                          <div class="modal-body">
-                            Você está prestes a excluir um dispostivo! <br> Essa ação não poderá ser desfeita.
-                          </div>
-                          <div class="modal-footer">
-                              <a class="btn btn-sm btn-secondary text-light" data-dismiss="modal">Fechar</a>
-                              <a class="btn btn-sm btn-danger text-light" href="{% url 'excluir_dispositivo' dispositivo.id %}">Excluir</a>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-
-
-                <!-- Modal EMPRESTAR -->
-                <div class="modal fade" id="emprestar" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                      <div class="modal-dialog modal-dialog-centered" role="document">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <h5 class="modal-title" id="confirmasequeremprestar">Deseja emprestar esse dispositivo?</h5>
-                              <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                              <span aria-hidden="true">&times;</span>
-                              </button>
-                          </div>
-                          <div class="modal-body">
-                            Esse dispositivo ficará em seu nome até que você clique em Devolver. <br>
-                          </div>
-                          <div class="modal-footer">
-                              <a class="btn btn-sm btn-secondary text-light" data-dismiss="modal">Fechar</a>
-                              <a class="btn btn-sm btn-primary text-light" href="{% url 'emprestar_dispositivo' dispositivo.id %}">Emprestar</a>
-                          </div>
-                        </div>
-                      </div>
-                </div>
-
-            </td>
+              <th width="10%" scope="col" class="align-middle">Nome</th>
+              <th width="15%" scope="col" class="align-middle">Descrição</th>
+              <th width="10%" scope="col" class="align-middle">Numero do Modelo</th>
+              <th width="10%" scope="col" class="align-middle">SO</th>
+              <th width="10%" scope="col" class="align-middle">Versão</th>
+              <th width="20%" scope="col" class="align-middle">Ações</th>
 
             </tr>
-            {% endif %}
-        {% endfor %}
-      </tbody>
-    </table>
-<br><br>
+          </thead>
+          <tbody>
+            {% for dispositivo in dispositivos %}
+                {% if dispositivo.disponivel %}
+                <tr>
+                  <th scope="row"  class="align-middle" >{{ dispositivo.nome }}</th>
+                  <td  class="align-middle">{{ dispositivo.descricao }}</td>
+                  <td  class="align-middle">{{ dispositivo.numeromodelo }}</td>
+                  <td  class="align-middle">{{ dispositivo.os }}</td>
+                  <td  class="align-middle">{{ dispositivo.versao }}</td>
 
 
-</div>
+                <td  class="align-middle">
 
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
-</html>
+                    {% if colaborador_logado.admin %}
+
+                    <a class="btn btn-sm btn-warning" href="{% url 'alterar_dispositivo' dispositivo.id %}">alterar</a>
+                    <!-- Button trigger modal EXCLUIR -->
+                    <a class="btn btn-sm btn-danger text-light" data-toggle="modal" data-target="#excluir"> excluir </a>
+
+                     {% endif %}
+
+                     <!-- Button trigger modal EMPRESTAR -->
+                    <a class="btn btn-sm btn-primary text-light" data-toggle="modal" data-target="#emprestar"> emprestar </a>
+
+                    <!-- Modal EXCLUIR -->
+                    <div class="modal fade" id="excluir" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="confirmasequerexcluir">Deseja realmente excluir?</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                  </button>
+                              </div>
+                              <div class="modal-body">
+                                Você está prestes a excluir um dispostivo! <br> Essa ação não poderá ser desfeita.
+                              </div>
+                              <div class="modal-footer">
+                                  <a class="btn btn-sm btn-secondary text-light" data-dismiss="modal">Fechar</a>
+                                  <a class="btn btn-sm btn-danger text-light" href="{% url 'excluir_dispositivo' dispositivo.id %}">Excluir</a>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+
+
+                    <!-- Modal EMPRESTAR -->
+                    <div class="modal fade" id="emprestar" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                          <div class="modal-dialog modal-dialog-centered" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h5 class="modal-title" id="confirmasequeremprestar">Deseja emprestar esse dispositivo?</h5>
+                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                  <span aria-hidden="true">&times;</span>
+                                  </button>
+                              </div>
+                              <div class="modal-body">
+                                Esse dispositivo ficará em seu nome até que você clique em Devolver. <br>
+                              </div>
+                              <div class="modal-footer">
+                                  <a class="btn btn-sm btn-secondary text-light" data-dismiss="modal">Fechar</a>
+                                  <a class="btn btn-sm btn-primary text-light" href="{% url 'emprestar_dispositivo' dispositivo.id %}">Emprestar</a>
+                              </div>
+                            </div>
+                          </div>
+                    </div>
+
+                </td>
+
+                </tr>
+                {% endif %}
+            {% endfor %}
+          </tbody>
+        </table>
+    <br><br>
+    </div>
+
+{% endblock %}
+
+
+
+
