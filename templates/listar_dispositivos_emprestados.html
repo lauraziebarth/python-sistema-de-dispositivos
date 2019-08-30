@@ -1,69 +1,44 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <title>Lista de Dispositivos Emprestados</title>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-</head>
-<body>
+{% extends 'base.html' %}
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+{% block title %} Lista de Dispositivos Emprestados {% endblock %}
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+{% block active_listar_dispositivos_emprestados %}active{% endblock %}
 
-  <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-    <div class="navbar-nav">
-      <a class="nav-item nav-link" href="{% url 'listar_dispositivos' %}">Dispositivos</a>
-      <a class="nav-item nav-link" href="{% url 'listar_dispositivos_emprestados_colaborador' %}">Seus Dispositivos</a>
-      <a class="nav-item nav-link" href="{% url 'listar_dispositivos_emprestados' %}">Dispositivos Emprestados</a>
-          {% if colaborador_logado.admin %}
-      <a class="nav-item nav-link" href="{% url 'cadastrar_dispositivo' %}">Cadastrar novo dispositivo</a>
-        {% endif %}
-      <a class="nav-item nav-link" href="{% url 'logout' %}">Sair</a>
+{% block body %}
+
+    <br><br>
+    <div class="container">
+
+    <h4> Dispositivos emprestados</h4>
+
+        <table class="table table-bordered table-hover">
+          <thead>
+            <tr>
+              <th width="10%" scope="col" class="align-middle">Nome</th>
+              <th width="15%" scope="col" class="align-middle">Descrição</th>
+              <th width="10%" scope="col" class="align-middle">Numero do Modelo</th>
+              <th width="5%" scope="col" class="align-middle">SO</th>
+              <th width="10%" scope="col" class="align-middle">Versão</th>
+              <th width="20%" scope="col" class="align-middle">Colaborador c/ Dispositivo</th>
+
+            </tr>
+          </thead>
+          <tbody>
+            {% for dispositivo in dispositivos %}
+                {% if dispositivo.disponivel == False %}
+
+                <tr>
+                  <th scope="row"  class="align-middle" >{{ dispositivo.nome }}</th>
+                  <td  class="align-middle">{{ dispositivo.descricao }}</td>
+                  <td  class="align-middle">{{ dispositivo.numeromodelo }}</td>
+                  <td  class="align-middle">{{ dispositivo.os }}</td>
+                  <td  class="align-middle">{{ dispositivo.versao }}</td>
+                  <td  class="align-middle">{{ dispositivocolaborador.colaborador_id }}</td>
+
+                {% endif %}
+            {% endfor %}
+        </table>
 
     </div>
-  </div>
-</nav>
 
-<br><br>
-<div class="container">
-
-<h4> Dispositivos emprestados</h4>
-
-    <table class="table table-bordered table-hover">
-      <thead>
-        <tr>
-          <th width="10%" scope="col" class="align-middle">Nome</th>
-          <th width="15%" scope="col" class="align-middle">Descrição</th>
-          <th width="10%" scope="col" class="align-middle">Numero do Modelo</th>
-          <th width="5%" scope="col" class="align-middle">SO</th>
-          <th width="10%" scope="col" class="align-middle">Versão</th>
-          <th width="20%" scope="col" class="align-middle">Colaborador c/ Dispositivo</th>
-
-        </tr>
-      </thead>
-      <tbody>
-        {% for dispositivo in dispositivos %}
-            {% if dispositivo.disponivel == False %}
-
-            <tr>
-              <th scope="row"  class="align-middle" >{{ dispositivo.nome }}</th>
-              <td  class="align-middle">{{ dispositivo.descricao }}</td>
-              <td  class="align-middle">{{ dispositivo.numeromodelo }}</td>
-              <td  class="align-middle">{{ dispositivo.os }}</td>
-              <td  class="align-middle">{{ dispositivo.versao }}</td>
-              <td  class="align-middle">{{ dispositivocolaborador.colaborador_id }}</td>
-
-            {% endif %}
-        {% endfor %}
-    </table>
-
-</div>
-
-<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
-</body>
-</html>
+{% endblock %}
