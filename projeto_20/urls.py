@@ -15,9 +15,9 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from dispositivosmercos.views import ListarDispositivos, CadastrarDispositivo, ExcluirDispositivo, AlterarDispositivo, \
+from dispositivos.views import ListarDispositivos, CadastrarDispositivo, ExcluirDispositivo, AlterarDispositivo, \
     EmprestarDispositivo, DevolverDispositivo, ListarDispositivosEmprestados, ListarDispositivosEmprestadosColaborador
-from colaboradoresmercos.views import CadastrarColaborador, Login, PerfilColaborador, Logout
+from colaboradores.views import CadastrarColaborador, Login, PerfilColaborador, Logout
 
 urlpatterns = [
     path('login/', Login.as_view(),

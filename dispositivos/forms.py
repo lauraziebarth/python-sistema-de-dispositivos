@@ -4,7 +4,7 @@ from __future__ import print_function
 from __future__ import unicode_literals
 from django import forms
 
-from dispositivosmercos.enums import DispositivosEnum
+from dispositivos.enums import DispositivosEnum
 
 
 class FormDispositivo(forms.Form):

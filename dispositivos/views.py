@@ -1,18 +1,18 @@
 from django.contrib.auth.decorators import login_required
 from django.http import HttpResponse
 from django.views import View
-from dispositivosmercos.forms import FormDispositivo
-from dispositivosmercos.models import Dispositivos
+from dispositivos.forms import FormDispositivo
+from dispositivos.models import Dispositivos
 from django.shortcuts import render, redirect
 from django.urls import reverse
 from django.contrib.auth import authenticate
-from dispositivosmercos.gateway import busca_dispositivos_nao_excluidos, busca_um_dispositivo, alterar_dispositivo, \
+from dispositivos.gateway import busca_dispositivos_nao_excluidos, busca_um_dispositivo, alterar_dispositivo, \
     excluir_dispositivo, cria_novo_dispositivo, emprestar_dispositivo, devolver_dispositivo, \
     criar_vinculo_colaboradordispositivo_emprestimo, atualizar_vinculo_colaboradordispositivo_datadedevolucao, busca_dispositivos_emprestados
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
-from colaboradoresmercos.models import Colaborador
+from colaboradores.models import Colaborador
 
 
 class ListarDispositivos(LoginRequiredMixin, View):

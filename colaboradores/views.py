@@ -1,5 +1,5 @@
 from django.views import View
-from colaboradoresmercos.forms import FormColaborador, FormLogin
+from colaboradores.forms import FormColaborador, FormLogin
 from django.contrib.auth.models import User
 from django.shortcuts import render, redirect
 from django.urls import reverse

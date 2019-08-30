@@ -38,8 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'widget_tweaks',
-    'dispositivosmercos.apps.DispositivosmercosConfig',
-    'colaboradoresmercos.apps.ColaboradoresmercosConfig',
+    'dispositivos.apps.DispositivosConfig',
+    'colaboradores.apps.ColaboradoresConfig',
 ]
 
 MIDDLEWARE = [

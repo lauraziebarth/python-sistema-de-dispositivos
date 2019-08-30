@@ -14,7 +14,7 @@ class Dispositivos(models.Model):
 
 class DispositivosColaborador(models.Model):
     dispositivo = models.ForeignKey(Dispositivos, on_delete=models.DO_NOTHING)
-    colaborador = models.ForeignKey('colaboradoresmercos.Colaborador', on_delete=models.DO_NOTHING)
+    colaborador = models.ForeignKey('colaboradores.Colaborador', on_delete=models.DO_NOTHING)
     data_de_emprestimo = models.DateField()
     data_de_devolucao = models.DateTimeField(null=True)
     ultima_alteracao = models.DateTimeField(null=True)
