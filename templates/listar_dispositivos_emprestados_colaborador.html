@@ -37,10 +37,10 @@
                 <td  class="align-middle">
 
                     <!-- Button trigger modal DEVOLVER -->
-                    <a class="btn btn-sm btn-success text-light" data-toggle="modal" data-target="#devolver"> devolver </a>
+                    <a class="btn btn-sm btn-success text-light" data-toggle="modal" data-target="#devolver{{ vinculo.id }}"> devolver </a>
 
                     <!-- Modal DEVOLVER -->
-                    <div class="modal fade" id="devolver" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="devolver{{ vinculo.id }}" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                       <div class="modal-dialog modal-dialog-centered" role="document">
                         <div class="modal-content">
                           <div class="modal-header">
@@ -55,6 +55,7 @@
                               - Tirar o app do modo Sandbox.<br>
                               - Coloque o dispositivo para carregar.<br>
                           </div>
+
                           <div class="modal-footer">
                               <a class="btn btn-sm btn-secondary text-light" data-dismiss="modal">Fechar</a>
                               <a class="btn btn-sm btn-success text-light" href="{% url 'devolver_dispositivo' vinculo.id %}">Devolver</a>
@@ -65,6 +66,7 @@
 
 
                 </td>
+
 
                 </tr>
             {% endfor %}

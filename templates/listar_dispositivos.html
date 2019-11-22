@@ -45,7 +45,7 @@
                      {% endif %}
 
                      <!-- Button trigger modal EMPRESTAR -->
-                    <a class="btn btn-sm btn-primary text-light" data-toggle="modal" data-target="#emprestar"> emprestar </a>
+                    <a class="btn btn-sm btn-primary text-light" data-toggle="modal" data-target="#emprestar{{ dispositivo.id }}"> emprestar </a>
 
                     <!-- Modal EXCLUIR -->
                     <div class="modal fade" id="excluir" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -70,7 +70,7 @@
 
 
                     <!-- Modal EMPRESTAR -->
-                    <div class="modal fade" id="emprestar" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="emprestar{{ dispositivo.id }}" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
@@ -84,7 +84,7 @@
                               </div>
                               <div class="modal-footer">
                                   <a class="btn btn-sm btn-secondary text-light" data-dismiss="modal">Fechar</a>
-                                  <a class="btn btn-sm btn-primary text-light" href="{% url 'emprestar_dispositivo' dispositivo.id %}">Emprestar</a>
+                                  <a class="btn btn-sm btn-primary text-light" href="{% url 'emprestar_dispositivo' dispositivo.id %}">Emprestar </a>
                               </div>
                             </div>
                           </div>

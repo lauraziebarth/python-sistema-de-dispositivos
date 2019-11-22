@@ -43,7 +43,9 @@ def cria_novo_dispositivo(sistema_operacional, nome, descricao, numeromodelo, ve
 
 
 def busca_dispostivos_emprestados():
-    return Dispositivos.objects.filter(disponivel=False)
+    return DispositivosColaborador.objects.select_related('dispositivo') \
+        .filter(data_de_devolucao__isnull=True,
+                dispositivo__disponivel=False)
 
 
 def busca_dispositivos_emprestados_por_colaborador(colaborador_id):

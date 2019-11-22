@@ -14,6 +14,7 @@
         <table class="table table-bordered table-hover">
           <thead>
             <tr>
+              <th width="10%" scope="col" class="align-middle">Data Empréstimo</th>
               <th width="10%" scope="col" class="align-middle">Nome</th>
               <th width="15%" scope="col" class="align-middle">Descrição</th>
               <th width="10%" scope="col" class="align-middle">Numero do Modelo</th>
@@ -24,18 +25,17 @@
             </tr>
           </thead>
           <tbody>
-            {% for dispositivo in dispositivos %}
-                {% if dispositivo.disponivel == False %}
+            {% for vinculo in vinculos %}
 
                 <tr>
-                  <th scope="row"  class="align-middle" >{{ dispositivo.nome }}</th>
-                  <td  class="align-middle">{{ dispositivo.descricao }}</td>
-                  <td  class="align-middle">{{ dispositivo.numeromodelo }}</td>
-                  <td  class="align-middle">{{ dispositivo.os }}</td>
-                  <td  class="align-middle">{{ dispositivo.versao }}</td>
-                  <td  class="align-middle">{{ dispositivocolaborador.colaborador_id }}</td>
+                  <th scope="row" class="align-middle">{{ vinculo.data_de_emprestimo }}</th>
+                  <td  class="align-middle">{{ vinculo.dispositivo.nome }}</td>
+                  <td  class="align-middle">{{ vinculo.dispositivo.descricao }}</td>
+                  <td  class="align-middle">{{ vinculo.dispositivo.numeromodelo }}</td>
+                  <td  class="align-middle">{{ vinculo.dispositivo.os }}</td>
+                  <td  class="align-middle">{{ vinculo.dispositivo.versao }}</td>
+                  <td  class="align-middle">{{ vinculo.colaborador.nome }}</td>
 
-                {% endif %}
             {% endfor %}
         </table>
 

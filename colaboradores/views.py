@@ -47,7 +47,7 @@ class Login(View):
             login(request, user)
             return redirect(reverse('listar_dispositivos'))
         else:
-            pass
+            return redirect(reverse('login'))
 
 
 class Logout(View):

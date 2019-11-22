@@ -8,7 +8,8 @@ from django.urls import reverse
 from django.contrib.auth import authenticate
 from dispositivos.gateway import busca_dispositivos_nao_excluidos, busca_um_dispositivo, alterar_dispositivo, \
     excluir_dispositivo, cria_novo_dispositivo, emprestar_dispositivo, devolver_dispositivo, \
-    criar_vinculo_colaboradordispositivo_emprestimo, atualizar_vinculo_colaboradordispositivo_datadedevolucao, busca_dispositivos_emprestados
+    criar_vinculo_colaboradordispositivo_emprestimo, atualizar_vinculo_colaboradordispositivo_datadedevolucao, \
+    busca_dispositivos_emprestados, busca_dispostivos_emprestados
 from django.contrib.auth.decorators import login_required
 from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
@@ -29,11 +30,11 @@ class ListarDispositivosEmprestados(LoginRequiredMixin, View):
         usuario_logado_id = request.user.id
         colaborador_logado = Colaborador.objects.get(user_id=usuario_logado_id)
 
-        dispositivos = busca_dispositivos_nao_excluidos()
-        return render(request, 'listar_dispositivos_emprestados.html', {'dispositivos': dispositivos, 'colaborador_logado': colaborador_logado})
+        vinculos = busca_dispostivos_emprestados()
+        return render(request, 'listar_dispositivos_emprestados.html', {'vinculos': vinculos, 'colaborador_logado': colaborador_logado})
 
 
-class ListarDispositivosEmprestadosColaborador(LoginRequiredMixin, View):
+class ListarDispositivosEmprestadosColaboradorLogado(LoginRequiredMixin, View):
     def get(self, request):
         usuario_logado_id = request.user.id
         colaborador_logado = Colaborador.objects.get(user_id=usuario_logado_id)
