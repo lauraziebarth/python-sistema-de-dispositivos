@@ -117,6 +117,6 @@ class DevolverDispositivo(LoginRequiredMixin, View):
 
 
 
-# agora se der errado tudo é culpa do murillo 
+# agora se der errado tudo é culpa do murillo
 
 
