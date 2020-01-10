@@ -11,7 +11,6 @@ from dispositivos.gateway import busca_dispositivos_nao_excluidos, busca_um_disp
     criar_vinculo_colaboradordispositivo_emprestimo, atualizar_vinculo_colaboradordispositivo_datadedevolucao, \
     busca_dispositivos_emprestados, busca_dispostivos_emprestados
 from django.contrib.auth.decorators import login_required
-from django.utils.decorators import method_decorator
 from django.contrib.auth.mixins import LoginRequiredMixin
 from colaboradores.models import Colaborador
 
@@ -114,3 +113,10 @@ class DevolverDispositivo(LoginRequiredMixin, View):
         devolver_dispositivo(vinculo.dispositivo_id)
 
         return redirect(reverse('listar_dispositivos'))
+
+
+
+
+# agora se der errado tudo é culpa do murillo 
+
+
