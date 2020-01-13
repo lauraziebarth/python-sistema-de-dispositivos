@@ -4,6 +4,7 @@
 
 {% block active_listar_dispositivos %}active{% endblock %}
 
+
 {% block body %}
 
     <br><br>
@@ -30,7 +31,7 @@
                   <td scope="row"  class="align-middle" >{{ dispositivo.nome }}</td>
                   <td  class="align-middle">{{ dispositivo.descricao }}</td>
                   <td  class="align-middle">{{ dispositivo.numeromodelo }}</td>
-                  <td  class="align-middle">{{ dispositivo.os }}</td>
+                  <td  class="align-middle" style="text-transform: lowercase">{{ dispositivo.os }}</td>
                   <td  class="align-middle">{{ dispositivo.versao }}</td>
 
 

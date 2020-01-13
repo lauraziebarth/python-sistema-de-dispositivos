@@ -12,7 +12,7 @@
 
     <h4> Dispositivos emprestados</h4>
 
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered">
           <thead>
             <tr>
               <th width="10%" scope="col" class="align-middle">Nome</th>
@@ -30,7 +30,7 @@
                   <th scope="row" class="align-middle" >{{ vinculo.dispositivo.nome }}</th>
                   <td  class="align-middle">{{ vinculo.dispositivo.descricao }}</td>
                   <td  class="align-middle">{{ vinculo.dispositivo.numeromodelo }}</td>
-                  <td  class="align-middle">{{ vinculo.dispositivo.os }}</td>
+                  <td  class="align-middle" style="text-transform: lowercase">{{ vinculo.dispositivo.os }}</td>
                   <td  class="align-middle">{{ vinculo.dispositivo.versao }}</td>
 
 
