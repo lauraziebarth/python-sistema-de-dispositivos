@@ -13,9 +13,21 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
         <style>
-                body{
-                    font-family: 'Montserrat', sans-serif;
-                }
+
+             .btn-login {
+                font-size: 16px;
+                background-color: #f3f3f3;
+                border: 1px solid #f3f3f3;
+                cursor: pointer;
+                margin: 0 3px;
+            }
+
+            .form-style {
+                background-color: #fff;
+                border-radius: 4px;
+                margin-top: 50px;
+            }
+
         </style>
 
     </head>
@@ -23,9 +35,9 @@
 
     <body>
 
-        <h1 class="text-center" style="margin-top: 50px;"><b>Cadastre-se</b></h1>
+        <h1 class="text-center" style="margin-top: 50px;">Cadastre-se</h1>
 
-        <form style="margin-top: 50px" method="post" action="{% url 'cadastrar_colaborador' %}">
+        <form class="form-style" method="post" action="{% url 'cadastrar_colaborador' %}">
             {% csrf_token %}
 
             <div class="mx-auto" style="width: 350px;">
@@ -51,9 +63,9 @@
                     {% render_field form.senha class="form-control" %}
                 </div>
 
-                <input class="btn btn-success btn-lg btn-block" type="submit" value="Salvar"/>
+                <input class="btn btn-login btn-lg btn-block" type="submit" value="Salvar"/>
                 <div class="my-1">
-                 <a class="btn btn-danger btn-lg btn-block" href="{% url 'login' %}">Cancelar</a>
+                 <a class="btn btn-login btn-lg btn-block" href="{% url 'login' %}">Cancelar</a>
                 </div>
                 <small id="0" class="form-text text-muted">* Campos Obrigatórios.</small>
 

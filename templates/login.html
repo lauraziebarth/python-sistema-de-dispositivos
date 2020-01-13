@@ -1,3 +1,4 @@
+
 <html>
 
     <head>
@@ -6,9 +7,20 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
 
         <style>
-                body{
-                    font-family: 'Montserrat', sans-serif;
-                }
+
+            .btn-login {
+                font-size: 16px;
+                background-color: #f3f3f3;
+                border: 1px solid #f3f3f3;
+                cursor: pointer;
+                margin: 0 3px;
+            }
+
+            .form-style {
+                background-color: #fff;
+                border-radius: 4px;
+                margin-top: 50px;
+            }
         </style>
 
     </head>
@@ -18,7 +30,7 @@
     <h1 class="text-center" style="margin-top: 50px;"> Acessar o sistema</h1>
 
 
-    <form style="margin-top: 50px" method="post" action="{% url 'login' %}">
+    <form class="form-style" method="post" action="{% url 'login' %}">
 
         {% csrf_token %}
 
@@ -35,15 +47,9 @@
                 <input type="password" class="form-control" id="id1" name="password">
             </div>
 
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="xx">
-                <label class="form-check-label" for="xx">Lembrar</label>
-            </div>
-
-
-            <input class="btn btn-success btn-lg btn-block" type="submit" value="Entrar"/>
+            <input class="btn btn-login btn-lg btn-block" type="submit" value="Entrar"/>
             <div class="my-1">
-                 <a class="btn btn-secondary btn-lg btn-block" href="{% url 'cadastrar_colaborador' %}">Cadastre-se</a>
+                 <a class="btn btn-login btn-lg btn-block" href="{% url 'cadastrar_colaborador' %}">Cadastre-se</a>
             </div>
 
         </div>
