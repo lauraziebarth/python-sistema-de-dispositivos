@@ -78,9 +78,18 @@ WSGI_APPLICATION = 'projeto_20.wsgi.application'
 
 DATABASES = {
     'default': {
+        "ENGINE": "django.db.backends.postgresql_psycopg2",
+        "NAME": "PostgreSQL 12",
+        "USER": "lauragabrielaziebarth",
+        "PASSWORD": "",
+        "HOST": "localhost",
+        "PORT": "5432",
+    },
+
+    'local': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': os.path.join(BASE_DIR, 'db.sqlite'),
-    }
+        }
 }
 
 
