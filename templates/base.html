@@ -7,6 +7,47 @@
     <meta charset="UTF-8">
     <title>{% block title %}Título{% endblock %}</title>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+    <style>
+       body {
+           background-color: #f6f6f6;
+       }
+
+        .bg-light {
+            background-color: #fff !important;
+        }
+
+        .table {
+            background-color: #fff;
+            border-radius: 4px;
+            margin: 20px 0;
+            overflow: hidden;
+        }
+
+        .table td, .table th {
+            border: none !important;
+            padding-left: 25px;
+            padding-tpo: 20px;
+            padding-bottom: 20px;
+        }
+
+        .table td {
+            border-bottom: 1px solid #f6f6f6 !important;
+        }
+
+        .btn-teste {
+            font-size: 16px;
+            color: #333333;
+            background-color: #f3f3f3;
+            border: 1px solid #f3f3f3;
+            cursor: pointer;
+            margin: 0 3px;
+        }
+
+        .btn-teste:hover {
+            background-color: #ececec;
+        }
+    </style>
 </head>
 
 <body>
@@ -20,8 +61,8 @@
           <a class="nav-item nav-link {% block active_listar_dispositivos %}{% endblock %}" href="{% url 'listar_dispositivos' %}">Dispositivos</a>
           <a class="nav-item nav-link {% block active_listar_dispositivos_emprestado_colaborador %}{% endblock %}" href="{% url 'listar_dispositivos_emprestados_colaborador' %}">Seus Dispositivos</a>
           <a class="nav-item nav-link {% block active_listar_dispositivos_emprestados %}{% endblock %}" href="{% url 'listar_dispositivos_emprestados' %}">Dispositivos Emprestados</a>
-              {% if colaborador_logado.admin %}
-          <a class="nav-item nav-link {% block active_cadastrar_dispositivo %}{% endblock %}" href="{% url 'cadastrar_dispositivo' %}">Cadastrar novo dispositivo</a>
+            {% if colaborador_logado.admin %}
+          <a class="nav-item nav-link {% block active_cadastrar_dispositivo %}{% endblock %}" href="{% url 'cadastrar_dispositivo' %}">Cadastrar dispositivo</a>
             {% endif %}
           <a class="nav-item nav-link" href="{% url 'logout' %}">Sair</a>
         </div>

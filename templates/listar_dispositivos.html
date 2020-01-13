@@ -11,14 +11,14 @@
 
     <h4> Dispositivos disponíveis</h4>
 
-        <table class="table table-bordered table-hover">
+        <table class="table table-bordered">
           <thead>
             <tr>
               <th width="10%" scope="col" class="align-middle">Nome</th>
               <th width="15%" scope="col" class="align-middle">Descrição</th>
               <th width="10%" scope="col" class="align-middle">Numero do Modelo</th>
               <th width="10%" scope="col" class="align-middle">SO</th>
-              <th width="10%" scope="col" class="align-middle">Versão</th>
+              <th width="7%" scope="col" class="align-middle">Versão</th>
               <th width="20%" scope="col" class="align-middle">Ações</th>
 
             </tr>
@@ -27,7 +27,7 @@
             {% for dispositivo in dispositivos %}
                 {% if dispositivo.disponivel %}
                 <tr>
-                  <th scope="row"  class="align-middle" >{{ dispositivo.nome }}</th>
+                  <td scope="row"  class="align-middle" >{{ dispositivo.nome }}</td>
                   <td  class="align-middle">{{ dispositivo.descricao }}</td>
                   <td  class="align-middle">{{ dispositivo.numeromodelo }}</td>
                   <td  class="align-middle">{{ dispositivo.os }}</td>
@@ -38,14 +38,14 @@
 
                     {% if colaborador_logado.admin %}
 
-                    <a class="btn btn-sm btn-warning" href="{% url 'alterar_dispositivo' dispositivo.id %}">alterar</a>
+                    <a class="btn btn-sm btn-teste" href="{% url 'alterar_dispositivo' dispositivo.id %}">alterar</a>
                     <!-- Button trigger modal EXCLUIR -->
-                    <a class="btn btn-sm btn-danger text-light" data-toggle="modal" data-target="#excluir"> excluir </a>
+                    <a class="btn btn-sm btn-teste" data-toggle="modal" data-target="#excluir"> excluir </a>
 
                      {% endif %}
 
                      <!-- Button trigger modal EMPRESTAR -->
-                    <a class="btn btn-sm btn-primary text-light" data-toggle="modal" data-target="#emprestar{{ dispositivo.id }}"> emprestar </a>
+                    <a class="btn btn-sm btn-teste" data-toggle="modal" data-target="#emprestar{{ dispositivo.id }}"> emprestar </a>
 
                     <!-- Modal EXCLUIR -->
                     <div class="modal fade" id="excluir" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -67,8 +67,7 @@
                             </div>
                           </div>
                     </div>
-
-
+                
                     <!-- Modal EMPRESTAR -->
                     <div class="modal fade" id="emprestar{{ dispositivo.id }}" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -101,7 +100,3 @@
     </div>
 
 {% endblock %}
-
-
-
-
