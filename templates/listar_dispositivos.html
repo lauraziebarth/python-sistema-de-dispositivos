@@ -61,13 +61,13 @@
                                 Você está prestes a excluir um dispostivo! <br> Essa ação não poderá ser desfeita.
                               </div>
                               <div class="modal-footer">
-                                  <a class="btn btn-sm btn-secondary text-light" data-dismiss="modal">Fechar</a>
-                                  <a class="btn btn-sm btn-danger text-light" href="{% url 'excluir_dispositivo' dispositivo.id %}">Excluir</a>
+                                  <a class="btn btn-sm btn-teste" data-dismiss="modal">Fechar</a>
+                                  <a class="btn btn-sm btn-teste" href="{% url 'excluir_dispositivo' dispositivo.id %}">Excluir</a>
                               </div>
                             </div>
                           </div>
                     </div>
-                
+
                     <!-- Modal EMPRESTAR -->
                     <div class="modal fade" id="emprestar{{ dispositivo.id }}" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-dialog-centered" role="document">
@@ -82,8 +82,8 @@
                                 Esse dispositivo ficará em seu nome até que você clique em Devolver. <br>
                               </div>
                               <div class="modal-footer">
-                                  <a class="btn btn-sm btn-secondary text-light" data-dismiss="modal">Fechar</a>
-                                  <a class="btn btn-sm btn-primary text-light" href="{% url 'emprestar_dispositivo' dispositivo.id %}">Emprestar </a>
+                                  <a class="btn btn-sm btn-teste" data-dismiss="modal">Fechar</a>
+                                  <a class="btn btn-sm btn-teste" href="{% url 'emprestar_dispositivo' dispositivo.id %}">Emprestar </a>
                               </div>
                             </div>
                           </div>

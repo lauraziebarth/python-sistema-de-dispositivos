@@ -12,7 +12,7 @@
 <div class="container">
 
     <div class="my-5">
-        <a class="btn btn-primary" href="{% url 'listar_dispositivos' %}">Voltar para Listagem</a>
+        <a class="btn btn-teste" href="{% url 'listar_dispositivos' %}">Voltar para Listagem</a>
     </div>
 
     <form method="post" action="{% url 'alterar_dispositivo' dispositivo_id %}">
@@ -43,7 +43,7 @@
             {% render_field form.versao class="form-control" %}
         </div>
 
-        <input class="btn btn-primary" type="submit" value="Enviar"/>
+        <input class="btn btn-teste" type="submit" value="Enviar"/>
 
     </form>
 </div>
