@@ -13,6 +13,4 @@ class DispositivosEnum(object):
         )
 
 # dispositivos disponiveis para emprestino ios
-
-
 # dispositivos disponiveis para emprestino android
