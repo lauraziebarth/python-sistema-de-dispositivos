@@ -48,7 +48,9 @@ class ListarDispositivosEmprestadosColaboradorLogado(LoginRequiredMixin, View):
 class CadastrarDispositivo(LoginRequiredMixin, View):
     def get(self, request):
         form = FormDispositivo()
-        return render(request, 'cadastrar_dispositivo.html', {'form': form})
+        usuario_logado_id = request.user.id
+        colaborador_logado = Colaborador.objects.get(user_id=usuario_logado_id)
+        return render(request, 'cadastrar_dispositivo.html', {'form': form, 'colaborador_logado': colaborador_logado})
 
     def post(self, request):
         form = FormDispositivo(request.POST)
