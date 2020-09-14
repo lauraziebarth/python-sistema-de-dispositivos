@@ -110,15 +110,8 @@ class EmprestarDispositivo(LoginRequiredMixin, View):
 
 
 class DevolverDispositivo(LoginRequiredMixin, View):
-    def get(self, request, vinculo_id=None):
+    def get(self, vinculo_id=None):
         vinculo = atualizar_vinculo_colaboradordispositivo_datadedevolucao(vinculo_id)
         devolver_dispositivo(vinculo.dispositivo_id)
 
         return redirect(reverse('listar_dispositivos'))
-
-
-
-
-# agora se der errado tudo é culpa do murillo
-
-
