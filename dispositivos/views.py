@@ -21,7 +21,7 @@ class ListarDispositivos(LoginRequiredMixin, View):
         colaborador_logado = Colaborador.objects.get(user_id=usuario_logado_id)
 
         dispositivos = busca_dispositivos_nao_excluidos()
-        return render(request, 'listar_dispositivos.html', {'dispositivos': dispositivos, 'colaborador_logado': colaborador_logado})
+        return render(request, 'listar_todos_dispositivos.html', {'dispositivos': dispositivos, 'colaborador_logado': colaborador_logado})
 
 
 class ListarDispositivosEmprestados(LoginRequiredMixin, View):
@@ -39,7 +39,7 @@ class ListarDispositivosEmprestadosColaboradorLogado(LoginRequiredMixin, View):
         colaborador_logado = Colaborador.objects.get(user_id=usuario_logado_id)
 
         vinculos = busca_dispositivos_emprestados(colaborador_logado.id)
-        return render(request, 'listar_dispositivos_emprestados_colaborador.html', {
+        return render(request, 'listar_dispositivos_emprestados_por_colaborador.html', {
             'vinculos': vinculos,
             'colaborador_logado': colaborador_logado
         })
