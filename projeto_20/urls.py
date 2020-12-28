@@ -20,6 +20,8 @@ from dispositivos.views import ListarDispositivos, CadastrarDispositivo, Excluir
 from colaboradores.views import CadastrarColaborador, Login, PerfilColaborador, Logout
 
 urlpatterns = [
+    path('', Login.as_view(),
+         name='login'),
     path('login/', Login.as_view(),
          name='login'),
     path('logout/', Logout.as_view(),

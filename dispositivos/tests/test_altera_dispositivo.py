@@ -1,9 +1,10 @@
 from django.test import TestCase
+
 from dispositivos.gateway import busca_um_dispositivo
 from dispositivos.tests.core_test_case import criar_dispositivo_android, criar_dispositivo_ios
 
 
-class BuscaUmUnicoDispositivoTests(TestCase):
+class BuscaUmDispositivo(TestCase):
     def setUp(self):
         self.dispositivo_android = criar_dispositivo_android()
         self.dispositivo_ios = criar_dispositivo_ios()

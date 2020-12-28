@@ -41,15 +41,10 @@
 
                     <a class="btn btn-sm btn-teste" href="{% url 'alterar_dispositivo' dispositivo.id %}">alterar</a>
                     <!-- Button trigger modal EXCLUIR -->
-                    <a class="btn btn-sm btn-teste" data-toggle="modal" data-target="#excluir"> excluir </a>
-
-                     {% endif %}
-
-                     <!-- Button trigger modal EMPRESTAR -->
-                    <a class="btn btn-sm btn-teste" data-toggle="modal" data-target="#emprestar{{ dispositivo.id }}"> emprestar </a>
+                    <a class="btn btn-sm btn-teste" data-toggle="modal" data-target="#excluir{{ dispositivo.id }}"> excluir </a>
 
                     <!-- Modal EXCLUIR -->
-                    <div class="modal fade" id="excluir" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal fade" id="excluir{{ dispositivo.id }}" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                           <div class="modal-dialog modal-dialog-centered" role="document">
                             <div class="modal-content">
                               <div class="modal-header">
@@ -68,6 +63,12 @@
                             </div>
                           </div>
                     </div>
+
+                     {% endif %}
+
+                     <!-- Button trigger modal EMPRESTAR -->
+                    <a class="btn btn-sm btn-teste" data-toggle="modal" data-target="#emprestar{{ dispositivo.id }}"> emprestar </a>
+
 
                     <!-- Modal EMPRESTAR -->
                     <div class="modal fade" id="emprestar{{ dispositivo.id }}" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

@@ -21,7 +21,7 @@ class ListarDispositivos(LoginRequiredMixin, View):
         colaborador_logado = Colaborador.objects.get(user_id=usuario_logado_id)
 
         dispositivos = busca_dispositivos_nao_excluidos()
-        return render(request, 'listar_dispositivos.html', {'dispositivos': dispositivos, 'colaborador_logado': colaborador_logado})
+        return render(request, 'listar_todos_dispositivos.html', {'dispositivos': dispositivos, 'colaborador_logado': colaborador_logado})
 
 
 class ListarDispositivosEmprestados(LoginRequiredMixin, View):
@@ -39,7 +39,7 @@ class ListarDispositivosEmprestadosColaboradorLogado(LoginRequiredMixin, View):
         colaborador_logado = Colaborador.objects.get(user_id=usuario_logado_id)
 
         vinculos = busca_dispositivos_emprestados(colaborador_logado.id)
-        return render(request, 'listar_dispositivos_emprestados_colaborador.html', {
+        return render(request, 'listar_dispositivos_emprestados_por_colaborador.html', {
             'vinculos': vinculos,
             'colaborador_logado': colaborador_logado
         })
@@ -48,7 +48,9 @@ class ListarDispositivosEmprestadosColaboradorLogado(LoginRequiredMixin, View):
 class CadastrarDispositivo(LoginRequiredMixin, View):
     def get(self, request):
         form = FormDispositivo()
-        return render(request, 'cadastrar_dispositivo.html', {'form': form})
+        usuario_logado_id = request.user.id
+        colaborador_logado = Colaborador.objects.get(user_id=usuario_logado_id)
+        return render(request, 'cadastrar_dispositivo.html', {'form': form, 'colaborador_logado': colaborador_logado})
 
     def post(self, request):
         form = FormDispositivo(request.POST)
@@ -108,15 +110,8 @@ class EmprestarDispositivo(LoginRequiredMixin, View):
 
 
 class DevolverDispositivo(LoginRequiredMixin, View):
-    def get(self, request, vinculo_id=None):
+    def get(self, vinculo_id=None):
         vinculo = atualizar_vinculo_colaboradordispositivo_datadedevolucao(vinculo_id)
         devolver_dispositivo(vinculo.dispositivo_id)
 
         return redirect(reverse('listar_dispositivos'))
-
-
-
-
-# agora se der errado tudo é culpa do murillo
-
-

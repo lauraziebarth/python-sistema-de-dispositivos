@@ -58,9 +58,9 @@
       </button>
       <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
         <div class="navbar-nav">
-          <a class="nav-item nav-link {% block active_listar_dispositivos %}{% endblock %}" href="{% url 'listar_dispositivos' %}">Dispositivos</a>
-          <a class="nav-item nav-link {% block active_listar_dispositivos_emprestado_colaborador %}{% endblock %}" href="{% url 'listar_dispositivos_emprestados_colaborador' %}">Seus Dispositivos</a>
-          <a class="nav-item nav-link {% block active_listar_dispositivos_emprestados %}{% endblock %}" href="{% url 'listar_dispositivos_emprestados' %}">Dispositivos Emprestados</a>
+          <a class="nav-item nav-link {% block active_listar_dispositivos %}{% endblock %}" href="{% url 'listar_dispositivos' %}">Dispositivos disponíveis</a>
+          <a class="nav-item nav-link {% block active_listar_dispositivos_emprestado_colaborador %}{% endblock %}" href="{% url 'listar_dispositivos_emprestados_colaborador' %}">Meus empréstimos</a>
+          <a class="nav-item nav-link {% block active_listar_dispositivos_emprestados %}{% endblock %}" href="{% url 'listar_dispositivos_emprestados' %}">Dispositivos indisponíveis</a>
             {% if colaborador_logado.admin %}
           <a class="nav-item nav-link {% block active_cadastrar_dispositivo %}{% endblock %}" href="{% url 'cadastrar_dispositivo' %}">Cadastrar dispositivo</a>
             {% endif %}
